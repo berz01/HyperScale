@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './sidebar.css';
 
+import {
+  Link
+} from 'react-router-dom';
+
 let styles = {
   dropdownTemp: {
     height:250
@@ -31,91 +35,31 @@ export default class Sidebar extends Component {
                       <h3 className="uppercase">Stuff If you want it</h3>
                   </li>
                   <li className="nav-item start ">
-                      <a href="javascript:;" className="nav-link nav-toggle">
-                          <i className="icon-feed"></i>
-                          <span className="title">Feed</span>
-                          <span className="arrow"></span>
-                      </a>
-                      <ul className="sub-menu">
-                          <li className="nav-item start ">
-                              <a href="index.html" className="nav-link ">
-                                  <i className="icon-bar-chart"></i>
-                                  <span className="title">Dashboard 1</span>
-                              </a>
-                          </li>
-                          <li className="nav-item start ">
-                              <a href="dashboard_2.html" className="nav-link ">
-                                  <i className="icon-bulb"></i>
-                                  <span className="title">Dashboard 2</span>
-                                  <span className="badge badge-success">1</span>
-                              </a>
-                          </li>
-                          <li className="nav-item start ">
-                              <a href="dashboard_3.html" className="nav-link ">
-                                  <i className="icon-graph"></i>
-                                  <span className="title">Dashboard 3</span>
-                                  <span className="badge badge-danger">5</span>
-                              </a>
-                          </li>
-                      </ul>
+                      <Link to="/" className="nav-link nav-toggle">
+                            <i className="icon-feed"></i>
+                            <span className="title">Feed</span>
+                            <span className="arrow"></span>
+                        <ul className="sub-menu">
+                            <li className="nav-item start ">
+                                <a href="index.html" className="nav-link ">
+                                    <i className="icon-bar-chart"></i>
+                                    <span className="title">Others</span>
+                                </a>
+                            </li>
+                        </ul>
+                      </Link>
                   </li>
                   <li className="nav-item ">
-                      <a href="javascript:;" className="nav-link nav-toggle">
+                    <Link to="/opportunity" className="nav-link">
                           <i className="icon-bulb"></i>
                           <span className="title">Opportunity</span>
-                          <span className="arrow"></span>
-                      </a>
-                      <ul className="sub-menu">
-                          <li className="nav-item start ">
-                              <a href="index.html" className="nav-link ">
-                                  <i className="icon-bar-chart"></i>
-                                  <span className="title">Dashboard 1</span>
-                              </a>
-                          </li>
-                          <li className="nav-item start ">
-                              <a href="dashboard_2.html" className="nav-link ">
-                                  <i className="icon-bulb"></i>
-                                  <span className="title">Dashboard 2</span>
-                                  <span className="badge badge-success">1</span>
-                              </a>
-                          </li>
-                          <li className="nav-item start ">
-                              <a href="dashboard_3.html" className="nav-link ">
-                                  <i className="icon-graph"></i>
-                                  <span className="title">Dashboard 3</span>
-                                  <span className="badge badge-danger">5</span>
-                              </a>
-                          </li>
-                      </ul>
+                    </Link>
                   </li>
                   <li className="nav-item ">
-                      <a href="javascript:;" className="nav-link nav-toggle">
-                          <i className="icon-user"></i>
-                          <span className="title">Retention</span>
-                          <span className="arrow"></span>
-                      </a>
-                      <ul className="sub-menu">
-                          <li className="nav-item start ">
-                              <a href="index.html" className="nav-link ">
-                                  <i className="icon-bar-chart"></i>
-                                  <span className="title">Dashboard 1</span>
-                              </a>
-                          </li>
-                          <li className="nav-item start ">
-                              <a href="dashboard_2.html" className="nav-link ">
-                                  <i className="icon-bulb"></i>
-                                  <span className="title">Dashboard 2</span>
-                                  <span className="badge badge-success">1</span>
-                              </a>
-                          </li>
-                          <li className="nav-item start ">
-                              <a href="dashboard_3.html" className="nav-link ">
-                                  <i className="icon-graph"></i>
-                                  <span className="title">Dashboard 3</span>
-                                  <span className="badge badge-danger">5</span>
-                              </a>
-                          </li>
-                      </ul>
+                      <Link to="/retention" className="nav-link">
+                            <i className="icon-user"></i>
+                            <span className="title">Retention</span>
+                    </Link>
                   </li>
               </ul>
               {/* END SIDEBAR MENU */}

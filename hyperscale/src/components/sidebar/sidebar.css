@@ -7,3 +7,9 @@
     max-height: 80%;
   }
 }
+
+@media (min-width: 992px) {
+  .page-sidebar, .page-sidebar .page-sidebar-menu {
+    height: 750px;
+  }
+}

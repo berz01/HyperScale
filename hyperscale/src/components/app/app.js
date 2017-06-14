@@ -29,9 +29,9 @@ export default class App extends Component {
           <div className="page-container">
             <Sidebar />
             <div className="page-content-wrapper">
-              <Route path = "feed" component = {Feed} />
-              <Route path = "retention" component = {Retention} />
-              <Route path = "opportunity" component = {Opportunity} />
+              <Route exact path="/" component={Feed} />
+              <Route path="/retention" component={Retention} />
+              <Route path="/opportunity" component={Opportunity} />
             </div>
           </div>
         </div>

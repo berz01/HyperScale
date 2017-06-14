@@ -17,7 +17,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className="page-header navbar navbar-fixed-top">
-          <div className="page-header-inner "> 
+          <div className="page-header-inner ">
               <div className="page-logo">
                   <a href="index.html">
                       <img src="../assets/img/logo-light.png" alt="logo" className="logo-default" /> </a>
@@ -381,9 +381,9 @@ export default class Nav extends Component {
                           {/* DOC: Apply "dropdown-dark" className after below "dropdown-extended" to change the dropdown styte */}
                           <li className="dropdown dropdown-user dropdown-dark">
                               <a href="javascript:;" className="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                  <span className="username username-hide-on-mobile"> Nick </span>
+                                  <span className="username username-hide-on-mobile"> Barrett </span>
                                   {/* DOC: Do not remove below empty space(&nbsp;) as its purposely used */}
-                                  <img alt="" className="img-circle" src="../assets/img/avatar9.jpg" /> </a>
+                                  <img alt="" className="img-circle" src="../assets/img/haha.jpg" /> </a>
                               <ul className="dropdown-menu dropdown-menu-default">
                                   <li>
                                       <a href="page_user_profile_1.html">
