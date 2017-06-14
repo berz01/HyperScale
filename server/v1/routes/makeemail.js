@@ -3,6 +3,8 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var request = require('request');
 var rp = require('request-promise');
+var nodemailer = require('nodemailer');
+var config = require('../../config/config');
 
 //require('request-debug')(request);
 
@@ -13,26 +15,30 @@ api.use(bodyParser.urlencoded({
   extended: true
 }));
 
-var subKey = "0ea5ebb2c0e149e383f3f128574476ce";
+api.post("/sendEmail", function(req, res) {
 
-api.post("/computerVision", function(req, res) {
-  var myJSONObject = {
-      url: req.body.url,
+  var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: config.email.name,
+      pass: config.email.password
+    }
+  });
+
+  var mailOptions = {
+    from: 'barrettdavis01@gmail.com',
+    to: 'barrettdavis01@gmail.com',
+    subject: req.body.subject,
+    text: req.body.text
   };
 
-  request({
-      url: "https://eastus2.api.cognitive.microsoft.com/vision/v1.0/describe?maxCandidates=1",
-      method: "POST",
-      headers: {
-      "Ocp-Apim-Subscription-Key" : subKey
-      },
-      json: true,
-      body: myJSONObject
-  }, function(error, response, body) {
-    // console.log('REQUEST RESULTS:', error, res.statusCode, body);
-    //   console.log("response BODY***" + response.body);
-    //   console.log("***BODY**" + body.requestId);
-      res.send(body);
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+      res.end();
+    }
   });
 });
 

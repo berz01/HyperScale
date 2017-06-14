@@ -1,39 +1,51 @@
+var twilio = require('twilio');
 var express = require('express');
 var http = require('http');
 var bodyParser = require('body-parser');
 var request = require('request');
-var rp = require('request-promise');
+var requestpee = require('request-promise');
+var accountSid = 'ACc0eb88b3db3d429fc7aa9c9f8a018d26'; // Your Account SID from www.twilio.com/console
+var authToken = '342368f85e36b5174b5cdcb87e98a56e'; // Your Auth Token from www.twilio.com/console
 
-//require('request-debug')(request);
 
-var api = express.Router();
+var app = express.Router();
 
-api.use(bodyParser.json()); // support json encoded bodies
-api.use(bodyParser.urlencoded({
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-var subKey = "0ea5ebb2c0e149e383f3f128574476ce";
+// Send using twilito rest client
+var twilioClient = new twilio(accountSid, authToken);
 
-api.post("/computerVision", function(req, res) {
-  var myJSONObject = {
-      url: req.body.url,
-  };
+// Dummy Data, should come from another service, including twilioClient
+var serverSMS = {
+    serverNumber: '+14702357839',
+};
 
-  request({
-      url: "https://eastus2.api.cognitive.microsoft.com/vision/v1.0/describe?maxCandidates=1",
-      method: "POST",
-      headers: {
-      "Ocp-Apim-Subscription-Key" : subKey
-      },
-      json: true,
-      body: myJSONObject
-  }, function(error, response, body) {
-    // console.log('REQUEST RESULTS:', error, res.statusCode, body);
-    //   console.log("response BODY***" + response.body);
-    //   console.log("***BODY**" + body.requestId);
-      res.send(body);
-  });
+app.post("/send", function(req, res) {
+
+  setupSMS(req.body.number, req.body.message);
+
+  res.send()
 });
 
-module.exports = api;
+
+var setupSMS = function(number, message) {
+    var contents = {
+        body: message,
+        to: number, // Text this number
+        from: serverSMS.serverNumber // outgoing number - set in twilio dashboard TODO: see if we can pull from the twilio.RestClient
+    };
+
+    twilioClient.messages.create(contents, function(err, message) {
+      if(err != null && err.message != null){
+        console.error(err.message);
+      } else {
+        console.log("Message Sent");
+      }
+    });
+
+};
+
+module.exports = app;
