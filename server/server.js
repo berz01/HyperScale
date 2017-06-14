@@ -1,7 +1,6 @@
 // External frameworks and dependencies
 const request = require('request');
-const express = require('express');
-const session = require('express-session');
+const express = require('express'); 
 const Promise = require('bluebird');
 const https = require('https');
 
