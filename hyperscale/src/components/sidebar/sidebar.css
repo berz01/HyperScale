@@ -1,0 +1,9 @@
+.page-sidebar .page-sidebar-menu>li>a, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li>a {
+    text-align: start;
+}
+
+@media (min-width: 992px) {
+  .page-sidebar.navbar-collapse {
+    max-height: 80%;
+  }
+}
