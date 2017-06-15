@@ -1,32 +1,182 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'
 import './feed.css';
 
 let styles = {
   noHeight:0
 }
 
+let data = {
+    user: {
+      name: "Taylor Ereio"
+    },
+    stats: {
+      calls: 4,
+      texts: 5,
+      emails: 6,
+      notes: 2
+    },
+    feed: [{
+      type: "Call"
+    },
+    {
+      type: "Text"
+    },
+    {
+      type: "Text"
+    },
+    {
+      type: "Email"
+    },
+    {
+      type: "Note"
+    },
+    {
+      type: "Email"
+    }]
+}
+
 export default class Feed extends Component {
+
+  generateIcon(type){
+    var icon = "fa fa-question";
+
+    switch(type){
+      case "Call":
+        icon = "fa fa-phone fa-lg"
+        break;
+      case "Text":
+        icon = "fa fa-comment fa-lg"
+        break;
+      case "Email":
+        icon = "fa fa-envelope fa-lg"
+        break;
+      case "Note":
+        icon = "fa fa-sticky-note fa-lg"
+        break;
+    }
+
+    return icon;
+  }
+
+  generateFeedItem(item){
+    return (
+      <li className="mt-list-item">
+          <div className="list-todo-icon bg-white font-blue-steel">
+              <i className={this.generateIcon(item.type)}></i>
+          </div>
+          <div className="list-todo-item grey">
+              <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href="#task-1-2" aria-expanded="false">
+                  <div className="list-toggle done uppercase">
+                      <div className="list-toggle-title bold">{item.type}</div>
+                      <div className="badge badge-default pull-right bold"><i className={this.generateIcon(item.type)}></i></div>
+                  </div>
+              </a>
+              <div className="task-list panel-collapse collapse" id="task-1-2" aria-expanded="false">
+                  <ul>
+                      <li className="task-list-item done">
+                          <div className="task-icon">
+                              <a href="javascript:;">
+                                  <i className={this.generateIcon(item.type)}></i>
+                              </a>
+                          </div>
+                          <div className="task-content">
+                              <h4 className="uppercase bold">
+                                  <a href="javascript:;">First Info Row</a>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
+                          </div>
+                      </li>
+                  </ul>
+                  <div className="task-footer bg-grey">
+                      <div className="row">
+                          <div className="col-xs-6">
+                              <a className="task-trash" href="javascript:;">
+                                  <i className="fa fa-trash"></i>
+                              </a>
+                          </div>
+                          <div className="col-xs-6">
+                              <a className="task-add" href="javascript:;">
+                                  <i className="fa fa-plus"></i>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </li>
+    );
+
+  };
+
+  generateFeed(feedItem){
+    const feed = feedItems.map((item) =>
+      <li className="mt-list-item">
+          <div className="list-todo-icon bg-white font-blue-steel">
+              <i className={this.generateIcon(item.type)}></i>
+          </div>
+          <div className="list-todo-item grey">
+              <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href="#task-1-2" aria-expanded="false">
+                  <div className="list-toggle done uppercase">
+                      <div className="list-toggle-title bold">{item.type}</div>
+                      <div className="badge badge-default pull-right bold"><i className={this.generateIcon(item.type)}></i></div>
+                  </div>
+              </a>
+              <div className="task-list panel-collapse collapse" id="task-1-2" aria-expanded="false">
+                  <ul>
+                      <li className="task-list-item done">
+                          <div className="task-icon">
+                              <a href="javascript:;">
+                                  <i className={this.generateIcon(item.type)}></i>
+                              </a>
+                          </div>
+                          <div className="task-content">
+                              <h4 className="uppercase bold">
+                                  <a href="javascript:;">First Info Row</a>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
+                          </div>
+                      </li>
+                  </ul>
+                  <div className="task-footer bg-grey">
+                      <div className="row">
+                          <div className="col-xs-6">
+                              <a className="task-trash" href="javascript:;">
+                                  <i className="fa fa-trash"></i>
+                              </a>
+                          </div>
+                          <div className="col-xs-6">
+                              <a className="task-add" href="javascript:;">
+                                  <i className="fa fa-plus"></i>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </li>
+    );
+    ReactDOM.render(
+    {feed},
+    document.getElementById('feedContainer')
+    );
+  }
+
   render() {
     return (
           <div className="portlet light portlet-fit bordered">
               <div className="portlet-title">
                   <div className="caption">
-                      <i className=" icon-layers font-green"></i>
-                      <span className="caption-subject font-green bold uppercase">To Do List</span>
-                      <div className="caption-desc font-grey-cascade"> Default list element. Activate by adding <pre className="mt-code">.list-todo</pre> className to the <pre className="mt-code">ul</pre> element. </div>
+                      <i className=" icon-feed font-green"></i>
+                      <span className="caption-subject font-green bold uppercase">Feed</span>
+                      <div className="caption-desc font-grey-cascade"> List of interaction with this client</div>
                   </div>
               </div>
               <div className="portlet-body">
                   <div className="mt-element-list">
                       <div className="mt-list-head list-todo red">
                           <div className="list-head-title-container">
-                              <h3 className="list-title">My Projects</h3>
-                              <div className="list-head-count">
-                                  <div className="list-head-count-item">
-                                      <i className="fa fa-check"></i> 15</div>
-                                  <div className="list-head-count-item">
-                                      <i className="fa fa-cog"></i> 34</div>
-                              </div>
+                                <h3 className="list-title">{data.user.name}                          <i className="fa fa-phone"></i>      {data.stats.calls}   <i className="fa fa-comment"></i>   {data.stats.texts}   <i className="fa fa-envelope"></i>    {data.stats.emails}   <i className="fa fa-sticky-note"></i>       {data.stats.notes}      </h3>
                           </div>
                           <a href="javascript:;">
                               <div className="list-count pull-right red-mint">
@@ -36,268 +186,13 @@ export default class Feed extends Component {
                       </div>
                       <div className="mt-list-container list-todo">
                           <div className="list-todo-line red"></div>
-                          <ul>
-                              <li className="mt-list-item">
-                                  <div className="list-todo-icon bg-white font-blue-steel">
-                                      <i className="fa fa-database"></i>
-                                  </div>
-                                  <div className="list-todo-item blue-steel">
-                                      <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href="#task-1-2" aria-expanded="false">
-                                          <div className="list-toggle done uppercase">
-                                              <div className="list-toggle-title bold">Metronic Database</div>
-                                              <div className="badge badge-default pull-right bold">3</div>
-                                          </div>
-                                      </a>
-                                      <div className="task-list panel-collapse collapse" id="task-1-2" aria-expanded="false">
-                                          <ul>
-                                              <li className="task-list-item done">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-database"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Database Optimization</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                              <li className="task-list-item">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-table"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Table Sorting</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                              <li className="task-list-item">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-pencil"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Data Entry</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                          </ul>
-                                          <div className="task-footer bg-grey">
-                                              <div className="row">
-                                                  <div className="col-xs-6">
-                                                      <a className="task-trash" href="javascript:;">
-                                                          <i className="fa fa-trash"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="col-xs-6">
-                                                      <a className="task-add" href="javascript:;">
-                                                          <i className="fa fa-plus"></i>
-                                                      </a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </li>
-                              <li className="mt-list-item">
-                                  <div className="list-todo-icon bg-white font-green-meadow">
-                                      <i className="fa fa-paint-brush"></i>
-                                  </div>
-                                  <div className="list-todo-item green-meadow">
-                                      <a className="list-toggle-container font-white" data-toggle="collapse" href="#task-2-2" aria-expanded="false">
-                                          <div className="list-toggle done uppercase">
-                                              <div className="list-toggle-title bold">Creative Artwork</div>
-                                              <div className="badge badge-default pull-right bold">3</div>
-                                          </div>
-                                      </a>
-                                      <div className="task-list panel-collapse collapse" id="task-2-2">
-                                          <ul>
-                                              <li className="task-list-item done">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-file-image-o"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Concept Design</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                              <li className="task-list-item done">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-star-half-o"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Creative Optimization</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                              <li className="task-list-item">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-thumbs-o-up"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Visual Proofing</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                          </ul>
-                                          <div className="task-footer bg-grey">
-                                              <div className="row">
-                                                  <div className="col-xs-6">
-                                                      <a className="task-trash" href="javascript:;">
-                                                          <i className="fa fa-trash"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="col-xs-6">
-                                                      <a className="task-add" href="javascript:;">
-                                                          <i className="fa fa-plus"></i>
-                                                      </a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </li>
-                              <li className="mt-list-item">
-                                  <div className="list-todo-icon bg-white font-yellow-crusta">
-                                      <i className="fa fa-sticky-note-o"></i>
-                                  </div>
-                                  <div className="list-todo-item yellow-crusta">
-                                      <a className="list-toggle-container" data-toggle="collapse" href="#task-3-2" aria-expanded="false">
-                                          <div className="list-toggle done uppercase">
-                                              <div className="list-toggle-title bold">Content Development</div>
-                                              <div className="badge badge-default pull-right bold">2</div>
-                                          </div>
-                                      </a>
-                                      <div className="task-list panel-collapse collapse" id="task-3-2">
-                                          <ul>
-                                              <li className="task-list-item done">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-navicon"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Artwork Slicing</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                              <li className="task-list-item">
-                                                  <div className="task-icon">
-                                                      <a href="javascript:;">
-                                                          <i className="fa fa-cube"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-status">
-                                                      <a className="done" href="javascript:;">
-                                                          <i className="fa fa-check"></i>
-                                                      </a>
-                                                      <a className="pending" href="javascript:;">
-                                                          <i className="fa fa-close"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="task-content">
-                                                      <h4 className="uppercase bold">
-                                                          <a href="javascript:;">Backend Integration</a>
-                                                      </h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
-                                                  </div>
-                                              </li>
-                                          </ul>
-                                          <div className="task-footer bg-grey">
-                                              <div className="row">
-                                                  <div className="col-xs-6">
-                                                      <a className="task-trash" href="javascript:;">
-                                                          <i className="fa fa-trash"></i>
-                                                      </a>
-                                                  </div>
-                                                  <div className="col-xs-6">
-                                                      <a className="task-add" href="javascript:;">
-                                                          <i className="fa fa-plus"></i>
-                                                      </a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </li>
+                          <ul id="feedContainer">
+                              {this.generateFeedItem(data.feed[0])}
+                              {this.generateFeedItem(data.feed[1])}
+                              {this.generateFeedItem(data.feed[2])}
+                              {this.generateFeedItem(data.feed[3])}
+                              {this.generateFeedItem(data.feed[4])}
+                              {this.generateFeedItem(data.feed[5])}
                           </ul>
                       </div>
                   </div>

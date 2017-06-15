@@ -13,7 +13,7 @@ export default class Overview extends Component {
               {/* BEGIN PAGE TITLE */}
               <div className="col-xs-6">
                 <div className="page-title">
-                    <h1>Feed    <small>statistics, charts, recent events and reports</small> </h1>
+                    <h1>Overview    <small>your daily todo</small> </h1>
                 </div>
               </div>
               <div className="col-xs-6">
