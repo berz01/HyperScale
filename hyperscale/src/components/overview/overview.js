@@ -12,9 +12,9 @@ export default class Overview extends Component {
 
     this.state = {
       completedActions: this.getCompletedActions(),
-      pendingActions: this.getPendingActions(),
+      pendingActions: this.props.pendingActions,
       feedItems: this.getFeedActions(),
-      name: this.getPendingActions()[0].name
+      name: this.props.pendingActions[0].name
     }
   }
 
@@ -138,65 +138,6 @@ export default class Overview extends Component {
       }
     ];
   };
-
-  getPendingActions(){
-    return [{
-        name: "Tim Hightower",
-        status: "New",
-        lastAction: "Call",
-        type: "Internet Lead"
-      }, {
-        name: "Jeanette Marvin",
-        status: "Active",
-        lastAction: "Text",
-        type: "Existing"
-      }, {
-        name: "Quidel Ted",
-        status: "Active",
-        lastAction: "Email",
-        type: "Filed a claim"
-      }, {
-        name: "Alec Ulick",
-        status: "Inactive",
-        lastAction: "Email",
-        type: "Expired"
-      }, {
-        name: "Taylor Ereio",
-        status: "New",
-        lastAction: "Call",
-        type: "Internet Lead"
-      }, {
-        name: "Shannon Veloz",
-        status: "New",
-        lastAction: "Note",
-        type: "Internet Lead"
-      },
-      {
-        name: "Sara Bealer",
-        status: "Inactive",
-        lastAction: "Text",
-        type: "Expired"
-      },
-      {
-        name: "Patrick Stevenson",
-        status: "Active",
-        lastAction: "Text",
-        type: "Existing"
-      },
-      {
-        name: "Stephanie Moore",
-        status: "Active",
-        lastAction: "Call",
-        type: "Existing"
-      },
-      {
-        name: "Nicholas Raasch",
-        status: "Active",
-        lastAction: "Note",
-        type: "Existing"
-      }
-    ];
-  }
 
   addNewFeedAction(type){
     var feedItems = this.state.feedItems;

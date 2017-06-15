@@ -63,7 +63,7 @@ export default class Conquer extends Component {
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" onClick={(e) => {this.props.addPendingAction(i); this.props.dismissAction(i)}} className="btn btn-outline green btn-sm">Add</button>
+                          <button type="button" onClick={(e) => {this.props.addPendingAction(this.state.pendingActions[i]); this.props.dismissAction(i)}} className="btn btn-outline green btn-sm">Add</button>
                           <button type="button" onClick={(e) => this.props.dismissAction(i)} className="btn btn-outline red btn-sm">Dismiss</button>
                       </div>
                   </div>
