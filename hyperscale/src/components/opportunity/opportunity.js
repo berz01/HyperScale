@@ -96,7 +96,6 @@ var pendingActions = [
 export default class Opportunity extends Component {
   constructor(props){
     super(props);
-    console.log("PENDING ACTION", this.props.addPendingAction);
     this.state = {
       pendingActions: pendingActions,
       completedActions: completedActions
@@ -194,6 +193,7 @@ export default class Opportunity extends Component {
 
   dismissAction(i){
     var actions = this.state.pendingActions;
+    console.log("I", i)
     actions.splice(i, 1);
     this.setState({
       pendingActions: actions

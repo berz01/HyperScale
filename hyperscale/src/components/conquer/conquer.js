@@ -36,6 +36,7 @@ export default class Conquer extends Component {
 
   componentWillReceiveProps(props){
       this.setState({
+        counter: 0,
         pendingActions: props.pendingActions,
         completedActions: props.completedActions
       })
@@ -62,8 +63,8 @@ export default class Conquer extends Component {
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" onClick={(e) => {this.props.addPendingAction(e, this.i); this.props.dismissAction(e, this.i)}} className="btn btn-outline green btn-sm">Add</button>
-                          <button type="button" onClick={(e) => {this.props.dismissAction(e, this.i)}} className="btn btn-outline red btn-sm">Dismiss</button>
+                          <button type="button" onClick={(e) => {this.props.addPendingAction(i); this.props.dismissAction(i)}} className="btn btn-outline green btn-sm">Add</button>
+                          <button type="button" onClick={(e) => this.props.dismissAction(i)} className="btn btn-outline red btn-sm">Dismiss</button>
                       </div>
                   </div>
               </div>
@@ -73,6 +74,7 @@ export default class Conquer extends Component {
   }
 
   render() {
+    this.state.counter = 0;
     return (
           <div className="portlet light bordered">
               <div className="portlet-title tabbable-line">

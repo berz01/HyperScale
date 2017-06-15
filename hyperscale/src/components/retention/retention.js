@@ -9,8 +9,8 @@ export default class Retention extends Component {
     super(props);
     console.log("PENDING ACTION", this.props.addPendingAction);
     this.state = {
-      pendingActions: getPendingActions(),
-      completedActions: getCompletedActions()
+      pendingActions: this.getPendingActions(),
+      completedActions: this.getCompletedActions()
     }
   };
   // Existing, Internet Lead, Potential, New

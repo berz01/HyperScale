@@ -26,7 +26,7 @@ export default class App extends Component {
   initPendingActions(){
     return [
       {
-        name: "Tim Hightower",
+        name: "Mc.Test Hightower",
         status: "Active",
         lastAction: "Call",
         type: "Internet Lead"
