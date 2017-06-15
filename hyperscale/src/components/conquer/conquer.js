@@ -2,28 +2,108 @@ import React, { Component } from 'react';
 import './conquer.css';
 
 
+// Existing, Internet Lead, Potential, New
 var pendingActions = [];
-var compeledActions = [];
+
+var completedActions = [
+  {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Call",
+    type: "Existing"
+  }, {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Text",
+    type: "Existing"
+  }, {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Email",
+    type: "Existing"
+  }, {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Email",
+    type: "Existing"
+  }, {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Call",
+    type: "Existing"
+  }, {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Note",
+    type: "Existing"
+  },
+  {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Text",
+    type: "Existing"
+  },
+  {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Text",
+    type: "Existing"
+  },
+  {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Call",
+    type: "Existing"
+  },
+  {
+    name: "Taylor Ereio",
+    status: "Active",
+    lastAction: "Note",
+    type: "Existing"
+  }
+];
 export default class Feed extends Component {
+
+  generateIcon(type){
+    var icon = "fa fa-question";
+
+    switch(type){
+      case "Call":
+        icon = "icon-call-in"
+        break;
+      case "Text":
+        icon = "icon-bubbles"
+        break;
+      case "Email":
+        icon = "icon-email"
+        break;
+      case "Note":
+        icon = "icon-notes"
+        break;
+    }
+
+    return icon;
+  }
+
 
   generateAction(action){
     return (
-      <div className="mt-action"> 
+      <div className="mt-action">
           <div className="mt-action-body">
               <div className="mt-action-row">
                   <div className="mt-action-info ">
                       <div className="mt-action-icon ">
-                          <i className="icon-magnet"></i>
+                          <i className={this.generateIcon(action.lastAction)}></i>
                       </div>
                       <div className="mt-action-details ">
-                          <span className="mt-action-author">Natasha Kim</span>
-                          <p className="mt-action-desc">Dummy text of the printing</p>
+                          <span className="mt-action-author">{action.name}</span>
+                          <p className="mt-action-desc">{action.status}</p>
                       </div>
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" className="btn btn-outline green btn-sm">Appove</button>
-                          <button type="button" className="btn btn-outline red btn-sm">Reject</button>
+                          <button type="button" className="btn btn-outline green btn-sm">Add</button>
+                          <button type="button" className="btn btn-outline red btn-sm">Dismiss</button>
                       </div>
                   </div>
               </div>
@@ -66,15 +146,15 @@ export default class Feed extends Component {
                           {/* BEGIN: Actions */}
                           <div className="mt-actions">
                             {}
-                              {this.generateAction()}
-                              {this.generateAction()}
-                              {this.generateAction()}
-                              {this.generateAction()}
-                              {this.generateAction()}
-                              {this.generateAction()}
-                              {this.generateAction()}
-                              {this.generateAction()}
-                              {this.generateAction()}
+                              {this.generateAction(completedActions[0])}
+                              {this.generateAction(completedActions[1])}
+                              {this.generateAction(completedActions[2])}
+                              {this.generateAction(completedActions[3])}
+                              {this.generateAction(completedActions[4])}
+                              {this.generateAction(completedActions[5])}
+                              {this.generateAction(completedActions[6])}
+                              {this.generateAction(completedActions[7])}
+                              {this.generateAction(completedActions[8])}
                           </div>
                           {/* END: Actions */}
                       </div>
