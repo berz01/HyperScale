@@ -235,6 +235,8 @@ export default class Overview extends Component {
               {/* BEGIN PAGE TITLE */}
               <div className="col-xs-6">
                 <div className="page-title">
+                <img src="../assets/img/rocket-img.jpg" className=".mt-action-img" alt="RocketReach" height="125" width="125"/>
+
                     <h1>RocketReach    <small>: outbound sales automation dashboard</small> </h1>
                 </div>
               </div>

@@ -12,3 +12,7 @@
 .action-row > .space{
   margin-left: 15px;
 }
+
+.mt-actions .mt-action .mt-action-img > .img {
+    margin-bottom: 25px;
+}

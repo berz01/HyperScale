@@ -26,7 +26,7 @@ export default class Feed extends Component {
   }
 
   componentWillReceiveProps(props){
-      console.log(props.feedItems); 
+      console.log(props.feedItems);
       this.setState({feedItems: props.feedItems})
   };
 
@@ -37,16 +37,16 @@ export default class Feed extends Component {
 
     switch(type){
       case "Call":
-        icon = "icon-docs font-red-intense"
+        icon = "icon-call-out simple-size-default font-blue-steel"
         break;
       case "Text":
-        icon = "icon-user-following font-green-haze"
+        icon = "icon-bubbles simple-size-default font-red-steel"
         break;
       case "Email":
-        icon = "mt-timeline-icon icon-call bg-green-jungle bg-font-green-jungle border-grey-steel"
+        icon = "icon-envelope-letter simple-size-default font-green-steel"
         break;
       case "Note":
-        icon = "fa fa-sticky-note fa-lg font-green-haze"
+        icon = "icon-notebook simple-size-default font-purple-medium"
         break;
     }
 
@@ -176,7 +176,7 @@ export default class Feed extends Component {
           <div className="list-todo-icon bg-white font-blue-steel">
               <i className={this.generateIcon(item.type)}></i>
           </div>
-          <div className="list-todo-item grey">
+          <div className="list-todo-item grey-steel">
               <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href={href} aria-expanded="false">
                   <div className="list-toggle done uppercase">
                       <div className="list-toggle-title bold">{item.type}</div>
@@ -196,7 +196,7 @@ export default class Feed extends Component {
                           </div>
                       </li>
                   </ul>
-                  <div className="task-footer bg-grey">
+                  <div className="task-footer bg-grey-steel">
                       <div className="row">
                           <div className="col-xs-12">
                               <a className="task-trash" href="javascript:;">
