@@ -1,0 +1,19 @@
+
+.page-header.navbar .menu-toggler.sidebar-toggler {
+    float: none !important;
+    margin: 30px 0 0;
+}
+
+.page-header.navbar .menu-toggler {
+    display: block;
+    cursor: pointer;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    width: 20px;
+    height: 14px;
+    background-repeat: no-repeat;
+  }
+
+  .page-header.navbar .page-logo .logo-default {
+      margin: -35px 0px 0px 40px
+  }

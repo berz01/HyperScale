@@ -5,18 +5,6 @@ import {
   Link
 } from 'react-router-dom';
 
-let styles = {
-  dropdownTemp: {
-    height:250
-  },
-  dropdownTemp2: {
-    height:275
-  },
-  progressBarPercentage: {
-    width: '40%'
-  }
-}
-
 export default class Sidebar extends Component {
   render() {
     return (

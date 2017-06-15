@@ -4,7 +4,7 @@ import './app.css';
 import Nav from '../nav/nav';
 import Sidebar from '../sidebar/sidebar';
 
-import Feed from '../feed/feed';
+import Overview from '../overview/overview';
 import Opportunity from '../opportunity/opportunity';
 import Retention from '../retention/retention';
 
@@ -29,7 +29,7 @@ export default class App extends Component {
           <div className="page-container">
             <Sidebar />
             <div className="page-content-wrapper">
-              <Route exact path="/" component={Feed} />
+              <Route exact path="/" component={Overview} />
               <Route path="/retention" component={Retention} />
               <Route path="/opportunity" component={Opportunity} />
             </div>
