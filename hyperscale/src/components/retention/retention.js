@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './retention.css';
 
 import Conquer from '../conquer/conquer';
-import Feed from '../feed/feed';
+import Profile from '../profile/profile';
 
 export default class Retention extends Component {
   render() {
@@ -31,11 +31,11 @@ export default class Retention extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <Conquer />
+                <Conquer />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">
-                <Feed />
+                <Profile />
               </div>
             </div>
           {/* END PAGE BASE CONTENT */}

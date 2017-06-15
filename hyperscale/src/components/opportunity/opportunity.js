@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './opportunity.css';
 
 import Conquer from '../conquer/conquer';
-import Feed from '../feed/feed';
+import Profile from '../profile/profile';
 
 export default class Opportunity extends Component {
   render() {
@@ -35,7 +35,7 @@ export default class Opportunity extends Component {
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">
-                <Feed />
+                <Profile />
               </div>
             </div>
           {/* END PAGE BASE CONTENT */}

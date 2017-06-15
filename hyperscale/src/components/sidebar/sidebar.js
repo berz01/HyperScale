@@ -25,7 +25,7 @@ export default class Sidebar extends Component {
                   <li className="nav-item start ">
                       <Link to="/" className="nav-link nav-toggle">
                             <i className="icon-feed"></i>
-                            <span className="title">Feed</span>
+                            <span className="title">Workbench</span>
                             <span className="arrow"></span>
                         <ul className="sub-menu">
                             <li className="nav-item start ">
@@ -40,13 +40,13 @@ export default class Sidebar extends Component {
                   <li className="nav-item ">
                     <Link to="/opportunity" className="nav-link">
                           <i className="icon-bulb"></i>
-                          <span className="title">Opportunity</span>
+                          <span className="title">Potential</span>
                     </Link>
                   </li>
                   <li className="nav-item ">
                       <Link to="/retention" className="nav-link">
                             <i className="icon-user"></i>
-                            <span className="title">Retention</span>
+                            <span className="title">Existing</span>
                     </Link>
                   </li>
               </ul>

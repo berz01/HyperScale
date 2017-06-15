@@ -8,9 +8,7 @@ export default class Feed extends Component {
 
   generateAction(action){
     return (
-      <div className="mt-action">
-          <div className="mt-action-img">
-              <img src="../assets/pages/media/users/avatar10.jpg" /> </div>
+      <div className="mt-action"> 
           <div className="mt-action-body">
               <div className="mt-action-row">
                   <div className="mt-action-info ">
@@ -35,7 +33,7 @@ export default class Feed extends Component {
   }
 
   listPendingActions(actions){
-      var output = ""; 
+      var output = "";
       for(var i=0; i < actions.length; i++){
 
       }

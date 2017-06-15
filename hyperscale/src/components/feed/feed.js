@@ -109,7 +109,7 @@ export default class Feed extends Component {
 
   };
 
-  generateFeed(feedItem){
+  generateFeed(feedItems){
     const feed = feedItems.map((item) =>
       <li className="mt-list-item">
           <div className="list-todo-icon bg-white font-blue-steel">
