@@ -5,12 +5,12 @@ export default class Conquer extends Component {
 
   constructor(props){
     super(props);
+
     this.state = {
-      completedActions: [],
-      pendingActions: []
-    }
-    this.state.completedActions = this.props.completedActions;
-    this.state.pendingActions = this.props.pendingActions;
+      counter:0,
+      pendingActions: this.props.pendingActions,
+      completedActions: this.props.completedActions
+    };
   };
 
   generateIcon(type){
@@ -36,6 +36,7 @@ export default class Conquer extends Component {
 
 
   generateAction(action){
+    var i = this.state.counter++;
     return (
       <div className="mt-action">
           <div className="mt-action-body">
@@ -55,7 +56,7 @@ export default class Conquer extends Component {
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" className="btn btn-outline green btn-sm">Add</button>
+                          <button type="button" onClick={(e) => this.props.addPendingAction(e, this.i)} className="btn btn-outline green btn-sm">Add</button>
                           <button type="button" className="btn btn-outline red btn-sm">Dismiss</button>
                       </div>
                   </div>

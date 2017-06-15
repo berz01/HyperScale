@@ -94,7 +94,14 @@ var pendingActions = [
 ];
 
 export default class Opportunity extends Component {
-
+  constructor(props){
+    super(props);
+    console.log(props.addPendingAction)
+    this.state = {
+      pendingActions: pendingActions,
+      completedActions: completedActions
+    };
+  }
   // Internet Lead, Internet Lead, Potential, New
   getCompletedActions(){
       return [{
@@ -212,7 +219,7 @@ export default class Opportunity extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <Conquer title="Potential Clients" completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
+              <Conquer title="Potential Clients" addPendingAction={this.props.addPendingAction} completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">

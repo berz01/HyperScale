@@ -26,7 +26,7 @@ export default class Feed extends Component {
   }
 
   componentWillReceiveProps(props){
-    console.log(props.feedItems);
+      console.log(props.feedItems); 
       this.setState({feedItems: props.feedItems})
   };
 
@@ -53,6 +53,11 @@ export default class Feed extends Component {
     return icon;
   }
 
+  handleInput(){
+
+
+  };
+
   generateCallTemplate(type, data){
     return (
       <div className="form-body">
@@ -62,12 +67,13 @@ export default class Feed extends Component {
                 <span className="input-group-addon">
                     <i className="fa fa-phone"></i>
                 </span>
-                <input type="text" className="form-control" placeholder="Phone Number" value="404-307-7465"/>
+                <input type="text" className="form-control" placeholder="Phone Number" onChange={this.handleInput} value={data.phonenumber}/>
             </div>
         </div>
       </div>
     );
   };
+
   generateTextTemplate(type, data){
     return (
       <div className="form-body">
@@ -77,7 +83,7 @@ export default class Feed extends Component {
                 <span className="input-group-addon">
                     <i className="fa fa-comment"></i>
                 </span>
-                <input type="text" className="form-control" placeholder="Phone Number" value="404-307-7465"/> </div>
+                <input type="text" className="form-control" placeholder="Phone Number" onChange={this.handleInput} value={data.phonenumber}/> </div>
         </div>
         <div className="form-group">
             <div className="row">
@@ -108,7 +114,7 @@ export default class Feed extends Component {
                   <span className="input-group-addon">
                       <i className="fa fa-envelope"></i>
                   </span>
-                  <input type="text" className="form-control" placeholder="Email Address" value="barrettdavis01@gmail.com"/>
+                  <input type="text" className="form-control" placeholder="Email Address" onChange={this.handleInput} value={data.email}/>
               </div>
 
           </div>
@@ -143,19 +149,19 @@ export default class Feed extends Component {
     );
   };
 
-  addFeedItem(type){
+  addFeedItem(type, item){
     switch(type){
       case "Call":
-        return this.generateCallTemplate();
+        return this.generateCallTemplate(type, item);
         break;
       case "Text":
-        return this.generateTextTemplate();
+        return this.generateTextTemplate(type, item);
         break;
       case "Email":
-        return this.generateEmailTemplate();
+        return this.generateEmailTemplate(type, item);
         break;
       case "Note":
-        return this.generateNoteTemplate();
+        return this.generateNoteTemplate(type, item);
         break;
     }
   };
@@ -163,6 +169,8 @@ export default class Feed extends Component {
   generateFeedItem(item){
     var href = "#task-" + this.state.counter + "-2";
     var id = "task-" + this.state.counter++ + "-2";
+    item.phonenumber = "404-307-7465";
+    item.email = "barrettdavis01@gmail.com";
     return (
       <li className="mt-list-item">
           <div className="list-todo-icon bg-white font-blue-steel">

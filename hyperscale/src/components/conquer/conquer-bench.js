@@ -68,6 +68,7 @@ export default class ConquerBench extends Component {
   }
 
   render() {
+    this.state.counter = 0;
     return (
           <div className="portlet light bordered">
               <div className="portlet-title tabbable-line">
@@ -89,7 +90,6 @@ export default class ConquerBench extends Component {
                       <div className="tab-pane active" id="tab_actions_pending">
                           {/* BEGIN: Actions */}
                           <div className="mt-actions">
-                            {console.log(this.props)}
                               {this.generateAction(this.props.pendingActions[0])}
                               {this.generateAction(this.props.pendingActions[1])}
                               {this.generateAction(this.props.pendingActions[2])}

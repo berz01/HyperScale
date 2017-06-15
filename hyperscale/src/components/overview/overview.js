@@ -212,17 +212,19 @@ export default class Overview extends Component {
   changeFeedClient(i){
     var feedItems = {};
 
-    if(!(i % 3)) feedItems =  this.getFeedActions3();
-    if(!(i % 2)) feedItems =  this.getFeedActions2();
     if(!(i % 1)) feedItems =  this.getFeedActions();
-    console.log(this.state);
-    this.setState({
-      name: this.state.pendingActions[i].name,
-      feedItems: feedItems,
-      pendingActions: this.state.pendingActions
-    });
+    if(!(i % 2)) feedItems =  this.getFeedActions2();
+    if(!(i % 3)) feedItems =  this.getFeedActions3();
 
-    console.log(this.state);
+    var newName = this.state.pendingActions[i].name;
+
+    this.setState( prevState => ({
+      name: newName,
+      feedItems: feedItems
+    }));
+    console.log("FeedItems", feedItems);
+
+    console.log("STATE", this.state);
   };
 
   render() {
