@@ -11,10 +11,10 @@ export default class Profile extends Component {
                                   <a href="#tab_1_1" data-toggle="tab" aria-expanded="true"> Overview </a>
                               </li>
                               <li className="">
-                                  <a href="#tab_1_3" data-toggle="tab" aria-expanded="false"> Account </a>
+                                  <a href="#tab_1_3" data-toggle="tab" aria-expanded="false"> </a>
                               </li>
                               <li>
-                                  <a href="#tab_1_6" data-toggle="tab"> Help </a>
+                                  <a href="#tab_1_6" data-toggle="tab"> </a>
                               </li>
                           </ul>
                           <div className="tab-content">
@@ -24,50 +24,37 @@ export default class Profile extends Component {
                                           <ul className="list-unstyled profile-nav">
                                               <li>
                                                   <img src="../assets/pages/media/profile/people19.png" className="img-responsive pic-bordered" alt=""/>
-                                                  <a href="javascript:;" className="profile-edit"> edit </a>
+
                                               </li>
-                                              <li>
-                                                  <a href="javascript:;"> Projects </a>
-                                              </li>
-                                              <li>
-                                                  <a href="javascript:;"> Messages
-                                                      <span> 3 </span>
-                                                  </a>
-                                              </li>
-                                              <li>
-                                                  <a href="javascript:;"> Friends </a>
-                                              </li>
-                                              <li>
-                                                  <a href="javascript:;"> Settings </a>
-                                              </li>
+
                                           </ul>
                                       </div>
                                       <div className="col-md-9">
                                           <div className="row">
                                               <div className="col-md-8 profile-info">
                                                   <h1 className="font-green sbold uppercase">John Doe</h1>
-                                                  <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam tincidunt erat volutpat laoreet dolore magna aliquam tincidunt erat volutpat.
+                                                  <p><b> Most recent notes: </b>He came by the office with his wife and had inquired about increasing his coverages
                                                       </p>
                                                   <p>
-                                                      <a href="javascript:;"> www.mywebsite.com </a>
+
                                                   </p>
                                                   <ul className="list-inline">
                                                       <li>
-                                                          <i className="fa fa-map-marker"></i> Spain </li>
+                                                          <i className="fa fa-map-marker"></i> 123 Street </li>
                                                       <li>
                                                           <i className="fa fa-calendar"></i> 18 Jan 1982 </li>
                                                       <li>
-                                                          <i className="fa fa-briefcase"></i> Design </li>
+                                                          <i className="fa fa-briefcase"></i> Engineer </li>
                                                       <li>
-                                                          <i className="fa fa-star"></i> Top Seller </li>
+                                                          <i className="fa fa-star"></i> Multi-Policy </li>
                                                       <li>
-                                                          <i className="fa fa-heart"></i> BASE Jumping </li>
+                                                          <i className="fa fa-heart"></i> Good standing </li>
                                                   </ul>
                                               </div>
                                               <div className="col-md-4">
                                                   <div className="portlet sale-summary">
                                                       <div className="portlet-title">
-                                                          <div className="caption font-red sbold"> Sales Summary </div>
+                                                          <div className="caption font-red sbold"> Policy Summary </div>
                                                           <div className="tools">
                                                               <a className="reload" href="javascript:;" data-original-title="" title=""> </a>
                                                           </div>
@@ -75,20 +62,20 @@ export default class Profile extends Component {
                                                       <div className="portlet-body">
                                                           <ul className="list-unstyled">
                                                               <li>
-                                                                  <span className="sale-info"> TODAY SOLD
+                                                                  <span className="sale-info"> Auto
                                                                       <i className="fa fa-img-up"></i>
                                                                   </span>
-                                                                  <span className="sale-num"> 23 </span>
+                                                                  <span className="sale-num">07/13/2017 </span>
                                                               </li>
                                                               <li>
-                                                                  <span className="sale-info"> WEEKLY SALES
+                                                                  <span className="sale-info"> Life
                                                                       <i className="fa fa-img-down"></i>
                                                                   </span>
-                                                                  <span className="sale-num"> 87 </span>
+                                                                  <span className="sale-num"> 07/13/2017 </span>
                                                               </li>
                                                               <li>
-                                                                  <span className="sale-info"> TOTAL SOLD </span>
-                                                                  <span className="sale-num"> 2377 </span>
+                                                                  <span className="sale-info"> Bank </span>
+                                                                  <span className="sale-num">07/13/2017 </span>
                                                               </li>
                                                           </ul>
                                                       </div>
@@ -111,99 +98,26 @@ export default class Profile extends Component {
                                                               <thead>
                                                                   <tr>
                                                                       <th>
-                                                                          <i className="fa fa-briefcase"></i> Company </th>
+                                                                          <i className="fa fa-sitemap"></i> Lead Type </th>
                                                                       <th className="hidden-xs">
-                                                                          <i className="fa fa-question"></i> Descrition </th>
+                                                                          <i className="fa fa-question"></i> Status </th>
                                                                       <th>
-                                                                          <i className="fa fa-bookmark"></i> Amount </th>
+                                                                          <i className="fa fa-phone-square"></i> Contacted By </th>
                                                                       <th> </th>
                                                                   </tr>
                                                               </thead>
                                                               <tbody>
                                                                   <tr>
                                                                       <td>
-                                                                          <a href="javascript:;"> Pixel Ltd </a>
+                                                                          <a href="javascript:;"> Internet Lead </a>
                                                                       </td>
-                                                                      <td className="hidden-xs"> Server hardware purchase </td>
-                                                                      <td> 52560.10$
-                                                                          <span className="label label-success label-sm"> Paid </span>
+                                                                      <td className="hidden-xs"> Potential </td>
+                                                                      <td> Carol Barber
+                                                                          <span className="label label-success label-sm">SMS text </span>
                                                                       </td>
-                                                                      <td>
-                                                                          <a className="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                                      </td>
+
                                                                   </tr>
-                                                                  <tr>
-                                                                      <td>
-                                                                          <a href="javascript:;"> Smart House </a>
-                                                                      </td>
-                                                                      <td className="hidden-xs"> Office furniture purchase </td>
-                                                                      <td> 5760.00$
-                                                                          <span className="label label-warning label-sm"> Pending </span>
-                                                                      </td>
-                                                                      <td>
-                                                                          <a className="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                                      </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                      <td>
-                                                                          <a href="javascript:;"> FoodMaster Ltd </a>
-                                                                      </td>
-                                                                      <td className="hidden-xs"> Company Anual Dinner Catering </td>
-                                                                      <td> 12400.00$
-                                                                          <span className="label label-success label-sm"> Paid </span>
-                                                                      </td>
-                                                                      <td>
-                                                                          <a className="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                                      </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                      <td>
-                                                                          <a href="javascript:;"> WaterPure Ltd </a>
-                                                                      </td>
-                                                                      <td className="hidden-xs"> Payment for Jan 2013 </td>
-                                                                      <td> 610.50$
-                                                                          <span className="label label-danger label-sm"> Overdue </span>
-                                                                      </td>
-                                                                      <td>
-                                                                          <a className="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                                      </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                      <td>
-                                                                          <a href="javascript:;"> Pixel Ltd </a>
-                                                                      </td>
-                                                                      <td className="hidden-xs"> Server hardware purchase </td>
-                                                                      <td> 52560.10$
-                                                                          <span className="label label-success label-sm"> Paid </span>
-                                                                      </td>
-                                                                      <td>
-                                                                          <a className="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                                      </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                      <td>
-                                                                          <a href="javascript:;"> Smart House </a>
-                                                                      </td>
-                                                                      <td className="hidden-xs"> Office furniture purchase </td>
-                                                                      <td> 5760.00$
-                                                                          <span className="label label-warning label-sm"> Pending </span>
-                                                                      </td>
-                                                                      <td>
-                                                                          <a className="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                                      </td>
-                                                                  </tr>
-                                                                  <tr>
-                                                                      <td>
-                                                                          <a href="javascript:;"> FoodMaster Ltd </a>
-                                                                      </td>
-                                                                      <td className="hidden-xs"> Company Anual Dinner Catering </td>
-                                                                      <td> 12400.00$
-                                                                          <span className="label label-success label-sm"> Paid </span>
-                                                                      </td>
-                                                                      <td>
-                                                                          <a className="btn btn-sm grey-salsa btn-outline" href="javascript:;"> View </a>
-                                                                      </td>
-                                                                  </tr>
+
                                                               </tbody>
                                                           </table>
                                                       </div>
@@ -249,7 +163,7 @@ export default class Profile extends Component {
                                                   <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
                                                       </p>
                                                   <form action="#" role="form">
-                                                       
+
                                                       <div className="margin-top-10">
                                                           <a href="javascript:;" className="btn green"> Submit </a>
                                                           <a href="javascript:;" className="btn default"> Cancel </a>
