@@ -4,12 +4,68 @@ import './retention.css';
 import Conquer from '../conquer/conquer';
 import Profile from '../profile/profile';
 
+var pendingActions = [{
+      name: "Goronwy Makar",
+      status: "Active",
+      lastAction: "Call",
+      type: "Existing"
+    }, {
+      name: "Jeanette Marvin",
+      status: "Active",
+      lastAction: "Text",
+      type: "Existing"
+    }, {
+      name: "Quidel Ted",
+      status: "Active",
+      lastAction: "Email",
+      type: "Existing"
+    }, {
+      name: "Alec Ulick",
+      status: "Active",
+      lastAction: "Email",
+      type: "Existing"
+    }, {
+      name: "Taylor Ereio",
+      status: "Active",
+      lastAction: "Call",
+      type: "Existing"
+    }, {
+      name: "Shannon Veloz",
+      status: "Active",
+      lastAction: "Note",
+      type: "Existing"
+    },
+    {
+      name: "Sara Bealer",
+      status: "Active",
+      lastAction: "Text",
+      type: "Existing"
+    },
+    {
+      name: "Patrick Stevenson",
+      status: "Active",
+      lastAction: "Text",
+      type: "Existing"
+    },
+    {
+      name: "Stephanie Moore",
+      status: "Active",
+      lastAction: "Call",
+      type: "Existing"
+    },
+    {
+      name: "Nicholas Raasch",
+      status: "Active",
+      lastAction: "Note",
+      type: "Existing"
+    }
+  ];
+
 export default class Retention extends Component {
   constructor(props){
     super(props);
-    console.log("PENDING ACTION", this.props.addPendingAction);
     this.state = {
-      pendingActions: this.getPendingActions(),
+      pendingActions: pendingActions,
       completedActions: this.getCompletedActions()
     }
   };
@@ -43,65 +99,6 @@ export default class Retention extends Component {
       }
     ];
   };
-
-  getPendingActions(){
-    return [{
-        name: "Goronwy Makar",
-        status: "Active",
-        lastAction: "Call",
-        type: "Existing"
-      }, {
-        name: "Jeanette Marvin",
-        status: "Active",
-        lastAction: "Text",
-        type: "Existing"
-      }, {
-        name: "Quidel Ted",
-        status: "Active",
-        lastAction: "Email",
-        type: "Existing"
-      }, {
-        name: "Alec Ulick",
-        status: "Active",
-        lastAction: "Email",
-        type: "Existing"
-      }, {
-        name: "Taylor Ereio",
-        status: "Active",
-        lastAction: "Call",
-        type: "Existing"
-      }, {
-        name: "Shannon Veloz",
-        status: "Active",
-        lastAction: "Note",
-        type: "Existing"
-      },
-      {
-        name: "Sara Bealer",
-        status: "Active",
-        lastAction: "Text",
-        type: "Existing"
-      },
-      {
-        name: "Patrick Stevenson",
-        status: "Active",
-        lastAction: "Text",
-        type: "Existing"
-      },
-      {
-        name: "Stephanie Moore",
-        status: "Active",
-        lastAction: "Call",
-        type: "Existing"
-      },
-      {
-        name: "Nicholas Raasch",
-        status: "Active",
-        lastAction: "Note",
-        type: "Existing"
-      }
-    ];
-  }
 
   dismissAction(i){
     var actions = this.state.pendingActions;

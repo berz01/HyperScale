@@ -100,11 +100,10 @@ export default class Opportunity extends Component {
       pendingActions: pendingActions,
       completedActions: completedActions
     };
-  } 
+  }
 
   dismissAction(i){
-    var actions = this.state.pendingActions;
-    console.log("I", i)
+    var actions = this.state.pendingActions; 
     actions.splice(i, 1);
     this.setState({
       pendingActions: actions
