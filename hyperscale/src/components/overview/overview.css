@@ -1,0 +1,14 @@
+.page-head .page-title {
+    display: inline-block;
+    float: left;
+    padding: 5px 20px 35px !important;
+}
+
+.action-row {
+  justify-content: space-around;
+  text-align: end;
+}
+
+.action-row > .space{
+  margin-left: 15px;
+}
