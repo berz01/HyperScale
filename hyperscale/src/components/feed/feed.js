@@ -185,14 +185,9 @@ export default class Feed extends Component {
                   </ul>
                   <div className="task-footer bg-grey">
                       <div className="row">
-                          <div className="col-xs-6">
+                          <div className="col-xs-12">
                               <a className="task-trash" href="javascript:;">
-                                  <i className="fa fa-trash"></i>
-                              </a>
-                          </div>
-                          <div className="col-xs-6">
-                              <a className="task-add" href="javascript:;">
-                                  <i className="fa fa-plus"></i>
+                                  <i className="fa fa-submit"></i>
                               </a>
                           </div>
                       </div>
