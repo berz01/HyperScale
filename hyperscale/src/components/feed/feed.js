@@ -83,6 +83,10 @@ export default class Feed extends Component {
                 </span>
                 <input type="text" className="form-control" placeholder="Phone Number" onChange={this.handleInput} value={data.phonenumber}/>
             </div>
+            <div>
+            <p></p>
+                <p>"Transcribed phone call: Hey I'm Mark Oakley, I work at State Farm, and my Job is CIO. I live at 123 Benning Street."</p>
+            </div>
         </div>
       </div>
     );

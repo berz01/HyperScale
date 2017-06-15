@@ -6,56 +6,56 @@ import Profile from '../profile/profile';
 
 var pendingActions = [{
       name: "Goronwy Makar",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Call",
       type: "Existing"
     }, {
       name: "Jeanette Marvin",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Text",
       type: "Existing"
     }, {
       name: "Quidel Ted",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Email",
       type: "Existing"
     }, {
       name: "Alec Ulick",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Email",
       type: "Existing"
     }, {
       name: "Taylor Ereio",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Call",
       type: "Existing"
     }, {
       name: "Shannon Veloz",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Note",
       type: "Existing"
     },
     {
       name: "Sara Bealer",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Text",
       type: "Existing"
     },
     {
       name: "Patrick Stevenson",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Text",
       type: "Existing"
     },
     {
       name: "Stephanie Moore",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Call",
       type: "Existing"
     },
     {
       name: "Nicholas Raasch",
-      status: "Active",
+      status: "Policy Renewal in 5 days",
       lastAction: "Note",
       type: "Existing"
     }
@@ -73,27 +73,27 @@ export default class Retention extends Component {
   getCompletedActions(){
     return [{
         name: "Jan Kim",
-        status: "Active",
+        status: "Policy Renewal Due This Month",
         lastAction: "Call",
         type: "Existing"
       }, {
         name: "Jeanette Marvin",
-        status: "Active",
+        status: "Policy Renewal in 5 days",
         lastAction: "Text",
         type: "Existing"
       }, {
         name: "Quidel Ted",
-        status: "Active",
+        status: "Policy Renewal in 5 days",
         lastAction: "Email",
         type: "Existing"
       }, {
         name: "Alec Ulick",
-        status: "Active",
+        status: "Policy Renewal in 5 days",
         lastAction: "Email",
         type: "Existing"
       }, {
         name: "Taylor Ereio",
-        status: "Active",
+        status: "Policy Renewal in 5 days",
         lastAction: "Call",
         type: "Existing"
       }
