@@ -108,9 +108,9 @@ export default class App extends Component {
           <div className="page-container">
             <Sidebar />
             <div className="page-content-wrapper">
-              <Route exact path="/" component={Overview} pendingActions={this.state.pendingActions}/>
-              <Route path="/retention" component={Retention} addPendingAction={this.addPendingAction.bind(this)}/>
-              <Route path="/opportunity" component={Opportunity} addPendingAction={this.addPendingAction.bind(this)}/>
+              <Route exact path="/" component={() => (<Overview pendingActions={this.state.pendingActions} />)} />
+              <Route path="/retention" component={() => (<Retention addPendingAction={this.addPendingAction.bind(this)} />)} />
+              <Route path="/opportunity" component={() => (<Opportunity addPendingAction={this.addPendingAction.bind(this)} />)}/>
             </div>
           </div>
         </div>

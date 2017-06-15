@@ -4,95 +4,15 @@ import './retention.css';
 import Conquer from '../conquer/conquer';
 import Profile from '../profile/profile';
 
-// Existing, Internet Lead, Potential, New
-var completedActions = [
-  {
-    name: "Jan Kim",
-    status: "Active",
-    lastAction: "Call",
-    type: "Existing"
-  }, {
-    name: "Jeanette Marvin",
-    status: "Active",
-    lastAction: "Text",
-    type: "Existing"
-  }, {
-    name: "Quidel Ted",
-    status: "Active",
-    lastAction: "Email",
-    type: "Existing"
-  }, {
-    name: "Alec Ulick",
-    status: "Active",
-    lastAction: "Email",
-    type: "Existing"
-  }, {
-    name: "Taylor Ereio",
-    status: "Active",
-    lastAction: "Call",
-    type: "Existing"
-  }
-];
-
-var pendingActions = [
-  {
-    name: "Goronwy Makar",
-    status: "Active",
-    lastAction: "Call",
-    type: "Existing"
-  }, {
-    name: "Jeanette Marvin",
-    status: "Active",
-    lastAction: "Text",
-    type: "Existing"
-  }, {
-    name: "Quidel Ted",
-    status: "Active",
-    lastAction: "Email",
-    type: "Existing"
-  }, {
-    name: "Alec Ulick",
-    status: "Active",
-    lastAction: "Email",
-    type: "Existing"
-  }, {
-    name: "Taylor Ereio",
-    status: "Active",
-    lastAction: "Call",
-    type: "Existing"
-  }, {
-    name: "Shannon Veloz",
-    status: "Active",
-    lastAction: "Note",
-    type: "Existing"
-  },
-  {
-    name: "Sara Bealer",
-    status: "Active",
-    lastAction: "Text",
-    type: "Existing"
-  },
-  {
-    name: "Patrick Stevenson",
-    status: "Active",
-    lastAction: "Text",
-    type: "Existing"
-  },
-  {
-    name: "Stephanie Moore",
-    status: "Active",
-    lastAction: "Call",
-    type: "Existing"
-  },
-  {
-    name: "Nicholas Raasch",
-    status: "Active",
-    lastAction: "Note",
-    type: "Existing"
-  }
-];
-
 export default class Retention extends Component {
+  constructor(props){
+    super(props);
+    console.log("PENDING ACTION", this.props.addPendingAction);
+    this.state = {
+      pendingActions: getPendingActions(),
+      completedActions: getCompletedActions()
+    }
+  };
   // Existing, Internet Lead, Potential, New
   getCompletedActions(){
     return [{
@@ -123,7 +43,6 @@ export default class Retention extends Component {
       }
     ];
   };
-
 
   getPendingActions(){
     return [{
@@ -184,6 +103,14 @@ export default class Retention extends Component {
     ];
   }
 
+  dismissAction(i){
+    var actions = this.state.pendingActions;
+    actions.splice(i, 1);
+    this.setState({
+      pendingActions: actions
+    });
+  };
+
   render() {
     return (
       <div className="page-content">
@@ -210,7 +137,11 @@ export default class Retention extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <Conquer title="Existing Clients" completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
+              <Conquer title="Existing Clients"
+              dismissAction={this.dismissAction.bind(this)}
+              addPendingAction={this.props.addPendingAction}
+              completedActions={this.state.completedActions}
+              pendingActions={this.state.pendingActions} /> />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">

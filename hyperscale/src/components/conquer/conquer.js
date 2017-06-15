@@ -34,6 +34,12 @@ export default class Conquer extends Component {
     return icon;
   }
 
+  componentWillReceiveProps(props){
+      this.setState({
+        pendingActions: props.pendingActions,
+        completedActions: props.completedActions
+      })
+  };
 
   generateAction(action){
     var i = this.state.counter++;
@@ -56,8 +62,8 @@ export default class Conquer extends Component {
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" onClick={(e) => this.props.addPendingAction(e, this.i)} className="btn btn-outline green btn-sm">Add</button>
-                          <button type="button" className="btn btn-outline red btn-sm">Dismiss</button>
+                          <button type="button" onClick={(e) => {this.props.addPendingAction(e, this.i); this.props.dismissAction(e, this.i)}} className="btn btn-outline green btn-sm">Add</button>
+                          <button type="button" onClick={(e) => {this.props.dismissAction(e, this.i)}} className="btn btn-outline red btn-sm">Dismiss</button>
                       </div>
                   </div>
               </div>
@@ -89,26 +95,26 @@ export default class Conquer extends Component {
                           {/* BEGIN: Actions */}
                           <div className="mt-actions">
                             {console.log(this.props)}
-                              {this.generateAction(this.props.pendingActions[0])}
-                              {this.generateAction(this.props.pendingActions[1])}
-                              {this.generateAction(this.props.pendingActions[2])}
-                              {this.generateAction(this.props.pendingActions[3])}
-                              {this.generateAction(this.props.pendingActions[4])}
-                              {this.generateAction(this.props.pendingActions[5])}
-                              {this.generateAction(this.props.pendingActions[6])}
-                              {this.generateAction(this.props.pendingActions[7])}
-                              {this.generateAction(this.props.pendingActions[8])}
+                              {this.generateAction(this.state.pendingActions[0])}
+                              {this.generateAction(this.state.pendingActions[1])}
+                              {this.generateAction(this.state.pendingActions[2])}
+                              {this.generateAction(this.state.pendingActions[3])}
+                              {this.generateAction(this.state.pendingActions[4])}
+                              {this.generateAction(this.state.pendingActions[5])}
+                              {this.generateAction(this.state.pendingActions[6])}
+                              {this.generateAction(this.state.pendingActions[7])}
+                              {this.generateAction(this.state.pendingActions[8])}
                           </div>
                           {/* END: Actions */}
                       </div>
                       <div className="tab-pane" id="tab_actions_completed">
                           {/* BEGIN:Completed*/}
                           <div className="mt-actions">
-                            {this.generateAction(this.props.completedActions[0])}
-                            {this.generateAction(this.props.completedActions[1])}
-                            {this.generateAction(this.props.completedActions[2])}
-                            {this.generateAction(this.props.completedActions[3])}
-                            {this.generateAction(this.props.completedActions[4])}
+                            {this.generateAction(this.state.completedActions[0])}
+                            {this.generateAction(this.state.completedActions[1])}
+                            {this.generateAction(this.state.completedActions[2])}
+                            {this.generateAction(this.state.completedActions[3])}
+                            {this.generateAction(this.state.completedActions[4])}
                           </div>
                       </div>
                   </div>

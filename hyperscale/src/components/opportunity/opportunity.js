@@ -96,7 +96,7 @@ var pendingActions = [
 export default class Opportunity extends Component {
   constructor(props){
     super(props);
-    console.log(props.addPendingAction)
+    console.log("PENDING ACTION", this.props.addPendingAction);
     this.state = {
       pendingActions: pendingActions,
       completedActions: completedActions
@@ -132,7 +132,6 @@ export default class Opportunity extends Component {
       }
     ];
   };
-
 
   getPendingActions(){
     return [{
@@ -193,6 +192,14 @@ export default class Opportunity extends Component {
     ];
   }
 
+  dismissAction(i){
+    var actions = this.state.pendingActions;
+    actions.splice(i, 1);
+    this.setState({
+      pendingActions: actions
+    });
+  };
+
   render() {
     return (
       <div className="page-content">
@@ -219,7 +226,11 @@ export default class Opportunity extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <Conquer title="Potential Clients" addPendingAction={this.props.addPendingAction} completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
+              <Conquer title="Potential Clients"
+                dismissAction={this.dismissAction.bind(this)}
+                addPendingAction={this.props.addPendingAction}
+                completedActions={this.state.completedActions}
+                pendingActions={this.state.pendingActions} />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">
