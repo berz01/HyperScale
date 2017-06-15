@@ -20,7 +20,7 @@ export default class Sidebar extends Component {
               {/* DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed */}
               <ul className="page-sidebar-menu   " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                   <li className="heading">
-                      <h3 className="uppercase">Stuff If you want it</h3>
+                      <h3 className="uppercase">Menu</h3>
                   </li>
                   <li className="nav-item start ">
                       <Link to="/" className="nav-link nav-toggle">
@@ -47,6 +47,12 @@ export default class Sidebar extends Component {
                       <Link to="/retention" className="nav-link">
                             <i className="icon-user"></i>
                             <span className="title">Existing</span>
+                    </Link>
+                  </li>
+                  <li className="nav-item ">
+                      <Link to="/retention" className="nav-link">
+                            <i className="icon-ghost"></i>
+                            <span className="title">Expired</span>
                     </Link>
                   </li>
               </ul>
