@@ -7,7 +7,8 @@ export default class ConquerBench extends Component {
     super(props);
     this.state = {
       completedActions: [],
-      pendingActions: []
+      pendingActions: [],
+      counter:0,
     }
     this.state.completedActions = this.props.completedActions;
     this.state.pendingActions = this.props.pendingActions;
@@ -36,6 +37,8 @@ export default class ConquerBench extends Component {
 
 
   generateAction(action){
+    var counter = this.state.counter++;
+
     return (
       <div className="mt-action">
           <div className="mt-action-body">
@@ -55,7 +58,7 @@ export default class ConquerBench extends Component {
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" className="btn btn-outline green btn-sm">See Feed</button>
+                          <button type="button" onClick={(e) => this.props.handleSeeFeed(counter)} className="btn btn-outline green btn-sm">See Feed</button>
                       </div>
                   </div>
               </div>
@@ -70,7 +73,7 @@ export default class ConquerBench extends Component {
               <div className="portlet-title tabbable-line">
                   <div className="caption">
                       <i className=" icon-social-twitter font-dark hide"></i>
-                      <span className="caption-subject font-dark bold uppercase">Quick Actions</span>
+                      <span className="caption-subject font-dark bold uppercase">{this.props.title}</span>
                   </div>
                   <ul className="nav nav-tabs">
                       <li className="active">

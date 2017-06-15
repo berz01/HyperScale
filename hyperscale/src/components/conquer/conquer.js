@@ -71,7 +71,7 @@ export default class Conquer extends Component {
               <div className="portlet-title tabbable-line">
                   <div className="caption">
                       <i className=" icon-social-twitter font-dark hide"></i>
-                      <span className="caption-subject font-dark bold uppercase">Quick Actions</span>
+                      <span className="caption-subject font-dark bold uppercase">{this.props.title}</span>
                   </div>
                   <ul className="nav nav-tabs">
                       <li className="active">

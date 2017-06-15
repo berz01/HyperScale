@@ -7,9 +7,6 @@ let styles = {
 }
 
 let data = {
-    user: {
-      name: "Taylor Ereio"
-    },
     stats: {
       calls: 4,
       texts: 5,
@@ -29,7 +26,7 @@ export default class Feed extends Component {
   }
 
   componentWillReceiveProps(props){
-      console.log("Testing"); 
+    console.log(props.feedItems);
       this.setState({feedItems: props.feedItems})
   };
   generateIcon(type){
@@ -221,7 +218,7 @@ export default class Feed extends Component {
                   <div className="mt-element-list">
                       <div className="mt-list-head list-todo red">
                           <div className="list-head-title-container">
-                                <h3 className="list-title">{data.user.name}                          <i className="fa fa-phone"></i>      {data.stats.calls}   <i className="fa fa-comment"></i>   {data.stats.texts}   <i className="fa fa-envelope"></i>    {data.stats.emails}   <i className="fa fa-sticky-note"></i>       {data.stats.notes}      </h3>
+                                <h3 className="list-title">{this.props.name} <span className="icon-padding"><i className="fa fa-phone"></i>      {data.stats.calls}   <i className="fa fa-comment"></i>   {data.stats.texts}   <i className="fa fa-envelope"></i>    {data.stats.emails}   <i className="fa fa-sticky-note"></i>       {data.stats.notes}</span> </h3>
                           </div>
                           <a href="javascript:;">
                               <div className="list-count pull-right red-mint">

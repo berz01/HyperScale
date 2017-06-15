@@ -212,7 +212,7 @@ export default class Opportunity extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <Conquer completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
+              <Conquer title="Potential Clients" completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">

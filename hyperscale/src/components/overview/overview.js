@@ -13,11 +13,42 @@ export default class Overview extends Component {
     this.state = {
       completedActions: this.getCompletedActions(),
       pendingActions: this.getPendingActions(),
-      feedItems: this.getFeedActions()
+      feedItems: this.getFeedActions(),
+      name: this.getPendingActions()[0].name
     }
   }
 
   getFeedActions(){
+      return [{
+        type: "Call"
+      },
+      {
+        type: "Email"
+      },
+      {
+        type: "Email"
+      },
+      {
+        type: "Note"
+      },
+      {
+        type: "Note"
+      },
+      {
+        type: "Call"
+      },
+      {
+        type: "Email"
+      },
+      {
+        type: "Note"
+      },
+      {
+        type: "Email"
+      }];
+  };
+
+  getFeedActions2(){
       return [{
         type: "Call"
       },
@@ -38,6 +69,36 @@ export default class Overview extends Component {
       },
       {
         type: "Email"
+      },
+      {
+        type: "Note"
+      },
+      {
+        type: "Email"
+      }];
+  };
+
+  getFeedActions3(){
+      return [{
+        type: "Text"
+      },
+      {
+        type: "Email"
+      },
+      {
+        type: "Text"
+      },
+      {
+        type: "Email"
+      },
+      {
+        type: "Call"
+      },
+      {
+        type: "Call"
+      },
+      {
+        type: "Call"
       },
       {
         type: "Note"
@@ -143,10 +204,25 @@ export default class Overview extends Component {
       type: type
     })
 
-    console.log(this.state.feedItems);
     this.setState(prevState => ({
       feedItems: feedItems
     }))
+  };
+
+  changeFeedClient(i){
+    var feedItems = {};
+
+    if(!(i % 3)) feedItems =  this.getFeedActions3();
+    if(!(i % 2)) feedItems =  this.getFeedActions2();
+    if(!(i % 1)) feedItems =  this.getFeedActions();
+    console.log(this.state);
+    this.setState({
+      name: this.state.pendingActions[i].name,
+      feedItems: feedItems,
+      pendingActions: this.state.pendingActions
+    });
+
+    console.log(this.state);
   };
 
   render() {
@@ -175,11 +251,11 @@ export default class Overview extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <ConquerBench completedActions={this.state.completedActions} pendingActions={this.state.pendingActions} />
+              <ConquerBench title="Staged Interactions" handleSeeFeed={this.changeFeedClient.bind(this)} completedActions={this.state.completedActions} pendingActions={this.state.pendingActions} />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">
-                <Feed feedItems={this.state.feedItems} />
+                <Feed name={this.state.name} feedItems={this.state.feedItems} />
               </div>
             </div>
           {/* END PAGE BASE CONTENT */}
