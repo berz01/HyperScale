@@ -176,7 +176,7 @@ export default class Feed extends Component {
           <div className="list-todo-icon bg-white font-blue-steel">
               <i className={this.generateIcon(item.type)}></i>
           </div>
-          <div className="list-todo-item grey">
+          <div className="list-todo-item grey-steel">
               <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href={href} aria-expanded="false">
                   <div className="list-toggle done uppercase">
                       <div className="list-toggle-title bold">{item.type}</div>
@@ -196,7 +196,7 @@ export default class Feed extends Component {
                           </div>
                       </li>
                   </ul>
-                  <div className="task-footer bg-grey">
+                  <div className="task-footer bg-grey-steel">
                       <div className="row">
                           <div className="col-xs-12">
                               <a className="task-trash" href="javascript:;">
