@@ -21,6 +21,7 @@ export default class Feed extends Component {
 
     this.state = {
       counter:1,
+      content:"",
       feedItems: this.props.feedItems
     };
   }
@@ -55,7 +56,20 @@ export default class Feed extends Component {
 
   handleInput(){
 
+  };
 
+  handleTemplate(e){
+    this.setState({content: e.target.value});
+  };
+
+  getTemplate(type){
+    var msg = "Hello";
+    if(type == "SMS"){
+      msg =  "hello " + this.props.name + ", Sending you a quick text reminder that we should catchup and review your policies"
+    } else {
+      msg =  "Hello " + this.props.name + ", We're reaching out to inquiry about our new insurance policy. It's a great rate and afforable for the whole family. We should catch up!"
+    }
+    return msg;
   };
 
   generateCallTemplate(type, data){
@@ -89,18 +103,18 @@ export default class Feed extends Component {
             <div className="row">
               <label className="col-md-3 control-label">SMS Templates</label>
               <div className="col-md-9">
-                  <select className="form-control">
-                      <option>Hello Again!</option>
-                      <option>Just Checking In</option>
-                      <option>Lets Catch Up :)</option>
-                        <option>SMS: Send Welcome</option>
+                  <select className="form-control" onChange={(e) => this.handleTemplate(e)}>
+                      <option value={this.getTemplate("")} >Hello Again!</option>
+                      <option value={this.getTemplate("")}>Just Checking In</option>
+                      <option value={this.getTemplate("")}>Lets Catch Up :)</option>
+                      <option value={this.getTemplate("SMS")}>SMS: Send Welcome</option>
                   </select>
               </div>
             </div>
         </div>
         <div className="form-group">
             <label>Message</label>
-            <textarea className="form-control" rows="3"></textarea>
+            <textarea className="form-control" rows="3" value={this.state.content}></textarea>
         </div>
       </div>
     );
@@ -122,18 +136,18 @@ export default class Feed extends Component {
               <div className="row">
                 <label className="col-md-3 control-label">Email Templates</label>
                 <div className="col-md-9">
-                    <select className="form-control">
-                        <option>Hello Again!</option>
-                        <option>Just Checking In</option>
-                        <option>Lets Catch Up :)</option>
-                        <option>SMS: Catch up</option>
-                    </select>
+                  <select className="form-control" onChange={(e) => this.handleTemplate(e)}>
+                      <option value={this.getTemplate("")} >Hello Again!</option>
+                      <option value={this.getTemplate("")}>Just Checking In</option>
+                      <option value={this.getTemplate("")}>Lets Catch Up :)</option>
+                      <option value={this.getTemplate("SMS")}>SMS: Send Welcome</option>
+                  </select>
                 </div>
               </div>
           </div>
           <div className="form-group">
               <label>Contents</label>
-              <textarea className="form-control" rows="3"></textarea>
+              <textarea className="form-control" rows="3" value={this.state.content} ></textarea>
           </div>
         </div>
       );
