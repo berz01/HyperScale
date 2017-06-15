@@ -9,13 +9,6 @@ const https = require('https');
 const port = process.env.PORT || 8080;
 const app = express();
 
-// TODO: how to structure an oauth client
-// const oauth2 = require('simple-oauth2')({
-//     clientID: AUTOMATIC_CLIENT_ID,
-//     clientSecret: AUTOMATIC_CLIENT_SECRET,
-//     site: 'https://accounts.automatic.com',
-//     tokenPath: '/oauth/access_token'
-// });
 
 app.use(session({
     secret: 'keyboard cat',
@@ -34,6 +27,7 @@ app.use('/api/v1/email', require('./v1/routes/makeemail.js'));
 app.use('/api/v1/retention', require('./v1/routes/retention.js'));
 app.use('/api/v1/leads', require('./v1/routes/leads.js'));
 app.use('/api/v1/feed', require('./v1/routes/feed.js'));
+app.use('/api/v1/transcribe', require('./v1/routes/transcribe.js'));
 
 
 // Start server
