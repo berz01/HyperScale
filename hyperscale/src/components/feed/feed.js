@@ -26,7 +26,7 @@ export default class Feed extends Component {
   }
 
   componentWillReceiveProps(props){
-      console.log(props.feedItems); 
+      console.log(props.feedItems);
       this.setState({feedItems: props.feedItems})
   };
 
@@ -37,16 +37,16 @@ export default class Feed extends Component {
 
     switch(type){
       case "Call":
-        icon = "icon-docs font-red-intense"
+        icon = "icon-call-out simple-size-default font-blue-steel"
         break;
       case "Text":
-        icon = "icon-user-following font-green-haze"
+        icon = "icon-bubbles simple-size-default font-red-steel"
         break;
       case "Email":
-        icon = "mt-timeline-icon icon-call bg-green-jungle bg-font-green-jungle border-grey-steel"
+        icon = "icon-envelope-letter simple-size-default font-green-steel"
         break;
       case "Note":
-        icon = "fa fa-sticky-note fa-lg font-green-haze"
+        icon = "icon-notebook simple-size-default font-purple-medium"
         break;
     }
 
