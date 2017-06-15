@@ -213,8 +213,8 @@ export default class Feed extends Component {
                   <div className="task-footer bg-grey-steel">
                       <div className="row">
                           <div className="col-xs-12">
-                              <a className="task-add" href="javascript:;">
-                                  <i className="fa fa-paper-plane fa-2x"></i>
+                              <a className="task-add" data-toggle="collapse"  href={href}>
+                                  <i className="fa fa-paper-plane fa-2x" href={href}></i>
                               </a>
                           </div>
                       </div>
@@ -227,6 +227,7 @@ export default class Feed extends Component {
   };
 
   render() {
+    this.state.counter = 1;
     return (
           <div className="portlet light portlet-fit bordered">
               <div className="portlet-title">
