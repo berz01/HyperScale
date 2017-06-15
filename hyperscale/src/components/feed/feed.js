@@ -15,25 +15,7 @@ let data = {
       texts: 5,
       emails: 6,
       notes: 2
-    },
-    feed: [{
-      type: "Call"
-    },
-    {
-      type: "Text"
-    },
-    {
-      type: "Text"
-    },
-    {
-      type: "Email"
-    },
-    {
-      type: "Note"
-    },
-    {
-      type: "Email"
-    }]
+    }
 }
 
 export default class Feed extends Component {
@@ -41,10 +23,14 @@ export default class Feed extends Component {
     super(props);
 
     this.state = {
-      counter: 1
+      counter:1,
+      feedItems: this.props.feedItems
     };
   }
 
+  componentWillReceiveProps(props){
+      this.setState({feedItems: props.feedItems})
+  };
   generateIcon(type){
     var icon = "fa fa-question";
 
@@ -76,7 +62,7 @@ export default class Feed extends Component {
                     <i className="fa fa-envelope"></i>
                 </span>
                 <input type="text" className="form-control" placeholder="Phone Number"/>
-            </div> 
+            </div>
         </div>
       </div>
     );
@@ -245,12 +231,12 @@ export default class Feed extends Component {
                       <div className="mt-list-container list-todo">
                           <div className="list-todo-line red"></div>
                           <ul id="feedContainer">
-                              {this.generateFeedItem(data.feed[0])}
-                              {this.generateFeedItem(data.feed[1])}
-                              {this.generateFeedItem(data.feed[2])}
-                              {this.generateFeedItem(data.feed[3])}
-                              {this.generateFeedItem(data.feed[4])}
-                              {this.generateFeedItem(data.feed[5])}
+                              {this.generateFeedItem(this.state.feedItems[0])}
+                              {this.generateFeedItem(this.state.feedItems[1])}
+                              {this.generateFeedItem(this.state.feedItems[2])}
+                              {this.generateFeedItem(this.state.feedItems[3])}
+                              {this.generateFeedItem(this.state.feedItems[4])}
+                              {this.generateFeedItem(this.state.feedItems[5])}
                           </ul>
                       </div>
                   </div>

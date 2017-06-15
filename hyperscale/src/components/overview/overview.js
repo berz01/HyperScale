@@ -5,6 +5,39 @@ import ConquerBench from '../conquer/conquer-bench';
 import Feed from '../feed/feed';
 
 export default class Overview extends Component {
+  constructor(props){
+    super(props);
+
+    this.addNewFeedAction = this.addNewFeedAction.bind(this);
+
+    this.state = {
+      completedActions: this.getCompletedActions(),
+      pendingActions: this.getPendingActions(),
+      feedItems: this.getFeedActions()
+    }
+  }
+
+  getFeedActions(){
+      return [{
+        type: "Call"
+      },
+      {
+        type: "Text"
+      },
+      {
+        type: "Text"
+      },
+      {
+        type: "Email"
+      },
+      {
+        type: "Note"
+      },
+      {
+        type: "Email"
+      }];
+  };
+
   // Existing, Internet Lead, Potential, New
   getCompletedActions(){
     return [{
@@ -35,7 +68,6 @@ export default class Overview extends Component {
       }
     ];
   };
-
 
   getPendingActions(){
     return [{
@@ -96,6 +128,18 @@ export default class Overview extends Component {
     ];
   }
 
+  addNewFeedAction(type){
+    var feedItems = this.state.feedItems;
+    feedItems.push({
+      type: "Call"
+    })
+
+    console.log(this.state.feedItems);
+    this.setState(prevState => ({
+      feedItems: feedItems
+    }))
+  };
+
   render() {
     return (
       <div className="page-content">
@@ -109,10 +153,10 @@ export default class Overview extends Component {
               </div>
               <div className="col-xs-6">
                 <div className="action-row">
-                  <a href="javascript:;" className="btn btn-lg default blue space"> Call <i className="fa fa-user"></i></a>
-                  <a href="javascript:;" className="btn btn-lg default red space"> Text <i className="fa fa-user"></i></a>
-                  <a href="javascript:;" className="btn btn-lg default green space"> Email <i className="fa fa-user"></i></a>
-                  <a href="javascript:;" className="btn btn-lg default purple space"> Note <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction(e)} className="btn btn-lg default blue space"> Call <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction(e)}  className="btn btn-lg default red space"> Text <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction(e)}  className="btn btn-lg default green space"> Email <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction(e)}  className="btn btn-lg default purple space"> Note <i className="fa fa-user"></i></a>
                 </div>
               </div>
               {/* END PAGE TITLE */}
@@ -122,11 +166,11 @@ export default class Overview extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <ConquerBench completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
+              <ConquerBench completedActions={this.state.completedActions} pendingActions={this.state.pendingActions} />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">
-                <Feed />
+                <Feed feedItems={this.state.feedItems} />
               </div>
             </div>
           {/* END PAGE BASE CONTENT */}
