@@ -19,16 +19,16 @@ export default class ConquerBench extends Component {
 
     switch(type){
       case "Call":
-        icon = "icon-call-in"
+        icon = "icon-user-follow"
         break;
       case "Text":
-        icon = "icon-bubbles"
+        icon = "icon-user-following"
         break;
       case "Email":
-        icon = "icon-envelope"
+        icon = "icon-user-follow"
         break;
       case "Note":
-        icon = "icon-note"
+        icon = "icon-user-unfollow"
         break;
     }
 
@@ -58,7 +58,7 @@ export default class ConquerBench extends Component {
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" onClick={(e) => this.props.handleSeeFeed(counter)} className="btn btn-outline green btn-sm">See Feed</button>
+                          <button type="button" onClick={(e) => this.props.handleSeeFeed(counter)} className="btn btn-outline green btn-sm">Add to Activity Feed</button>
                       </div>
                   </div>
               </div>

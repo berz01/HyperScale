@@ -5,123 +5,123 @@ import Conquer from '../conquer/conquer';
 import Profile from '../profile/profile';
 
 
-// Existing, Internet Lead, Potential, New
+// Internet Lead, Internet Lead, Potential, New
 var completedActions = [
   {
     name: "Jan Kim",
     status: "Active",
     lastAction: "Call",
-    type: "Existing"
+    type: "Internet Lead"
   }, {
     name: "Jeanette Marvin",
     status: "Active",
     lastAction: "Text",
-    type: "Existing"
+    type: "Internet Lead"
   }, {
     name: "Quidel Ted",
     status: "Active",
     lastAction: "Email",
-    type: "Existing"
+    type: "Internet Lead"
   }, {
     name: "Alec Ulick",
     status: "Active",
     lastAction: "Email",
-    type: "Existing"
+    type: "Internet Lead"
   }, {
     name: "Taylor Ereio",
     status: "Active",
     lastAction: "Call",
-    type: "Existing"
+    type: "Internet Lead"
   }
 ];
 
 var pendingActions = [
   {
-    name: "Goronwy Makar",
+    name: "Tim Hightower",
     status: "Active",
     lastAction: "Call",
-    type: "Existing"
+    type: "Internet Lead"
   }, {
     name: "Jeanette Marvin",
     status: "Active",
     lastAction: "Text",
-    type: "Existing"
+    type: "Internet Lead"
   }, {
     name: "Quidel Ted",
     status: "Active",
     lastAction: "Email",
-    type: "Existing"
+    type: "Personal Contact"
   }, {
     name: "Alec Ulick",
     status: "Active",
     lastAction: "Email",
-    type: "Existing"
+    type: "Internet Lead"
   }, {
     name: "Taylor Ereio",
     status: "Active",
     lastAction: "Call",
-    type: "Existing"
+    type: "Personal Contact"
   }, {
     name: "Shannon Veloz",
     status: "Active",
     lastAction: "Note",
-    type: "Existing"
+    type: "Internet Lead"
   },
   {
     name: "Sara Bealer",
     status: "Active",
     lastAction: "Text",
-    type: "Existing"
+    type: "Internet Lead"
   },
   {
     name: "Patrick Stevenson",
     status: "Active",
     lastAction: "Text",
-    type: "Existing"
+    type: "Internet Lead"
   },
   {
     name: "Stephanie Moore",
     status: "Active",
     lastAction: "Call",
-    type: "Existing"
+    type: "Internet Lead"
   },
   {
     name: "Nicholas Raasch",
     status: "Active",
     lastAction: "Note",
-    type: "Existing"
+    type: "Internet Lead"
   }
 ];
 
 export default class Opportunity extends Component {
 
-  // Existing, Internet Lead, Potential, New
+  // Internet Lead, Internet Lead, Potential, New
   getCompletedActions(){
       return [{
         name: "Jan Kim",
         status: "Active",
         lastAction: "Call",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Jeanette Marvin",
         status: "Active",
         lastAction: "Text",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Quidel Ted",
         status: "Active",
         lastAction: "Email",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Alec Ulick",
         status: "Active",
         lastAction: "Email",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Taylor Ereio",
         status: "Active",
         lastAction: "Call",
-        type: "Existing"
+        type: "Internet Lead"
       }
     ];
   };
@@ -129,59 +129,59 @@ export default class Opportunity extends Component {
 
   getPendingActions(){
     return [{
-        name: "Goronwy Makar",
+        name: "Bob Castle",
         status: "Active",
         lastAction: "Call",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Jeanette Marvin",
         status: "Active",
         lastAction: "Text",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Quidel Ted",
         status: "Active",
         lastAction: "Email",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Alec Ulick",
         status: "Active",
         lastAction: "Email",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Taylor Ereio",
         status: "Active",
         lastAction: "Call",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Shannon Veloz",
         status: "Active",
         lastAction: "Note",
-        type: "Existing"
+        type: "Internet Lead"
       },
       {
         name: "Sara Bealer",
         status: "Active",
         lastAction: "Text",
-        type: "Existing"
+        type: "Internet Lead"
       },
       {
         name: "Patrick Stevenson",
         status: "Active",
         lastAction: "Text",
-        type: "Existing"
+        type: "Internet Lead"
       },
       {
         name: "Stephanie Moore",
         status: "Active",
         lastAction: "Call",
-        type: "Existing"
+        type: "Internet Lead"
       },
       {
         name: "Nicholas Raasch",
         status: "Active",
         lastAction: "Note",
-        type: "Existing"
+        type: "Internet Lead"
       }
     ];
   }
