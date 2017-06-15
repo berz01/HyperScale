@@ -44,33 +44,37 @@ export default class Conquer extends Component {
 
   generateAction(action){
     var i = this.state.counter++;
-    return (
-      <div className="mt-action">
-          <div className="mt-action-body">
-              <div className="mt-action-row">
-                  <div className="mt-action-info ">
-                      <div className="mt-action-icon ">
-                          <i className={this.generateIcon(action.lastAction)}></i>
-                      </div>
-                      <div className="mt-action-details ">
-                          <span className="mt-action-author">{action.name}</span>
-                          <p className="mt-action-desc">{action.status}</p>
-                      </div>
-                  </div>
-                  <div className="mt-action-datetime ">
-                      <span className="mt-action-dot bg-red"></span>
-                      <span className="mt=action-time">  {action.type}</span>
-                  </div>
-                  <div className="mt-action-buttons ">
-                      <div className="btn-group btn-group-circle">
-                          <button type="button" onClick={(e) => {this.props.addPendingAction(this.state.pendingActions[i]); this.props.dismissAction(i)}} className="btn btn-outline green btn-sm">Add</button>
-                          <button type="button" onClick={(e) => this.props.dismissAction(i)} className="btn btn-outline red btn-sm">Dismiss</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-    )
+    if(action != undefined){
+      return (
+        <div className="mt-action">
+            <div className="mt-action-body">
+                <div className="mt-action-row">
+                    <div className="mt-action-info ">
+                        <div className="mt-action-icon ">
+                            <i className={this.generateIcon(action.lastAction)}></i>
+                        </div>
+                        <div className="mt-action-details ">
+                            <span className="mt-action-author">{action.name}</span>
+                            <p className="mt-action-desc">{action.status}</p>
+                        </div>
+                    </div>
+                    <div className="mt-action-datetime ">
+                        <span className="mt-action-dot bg-red"></span>
+                        <span className="mt=action-time">  {action.type}</span>
+                    </div>
+                    <div className="mt-action-buttons ">
+                        <div className="btn-group btn-group-circle">
+                            <button type="button" onClick={(e) => {this.props.addPendingAction(this.state.pendingActions[i]); this.props.dismissAction(i)}} className="btn btn-outline green btn-sm">Add</button>
+                            <button type="button" onClick={(e) => this.props.dismissAction(i)} className="btn btn-outline red btn-sm">Dismiss</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      )
+    } else {
+      return (<br/>);
+    }
   }
 
   render() {
