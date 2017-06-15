@@ -199,8 +199,8 @@ export default class Feed extends Component {
                   <div className="task-footer bg-grey-steel">
                       <div className="row">
                           <div className="col-xs-12">
-                              <a className="task-trash" href="javascript:;">
-                                  <i className="fa fa-submit"></i>
+                              <a className="task-add" href="javascript:;">
+                                  <i className="fa fa-paper-plane fa-2x"></i>
                               </a>
                           </div>
                       </div>

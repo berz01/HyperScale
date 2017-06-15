@@ -73,7 +73,7 @@ export default class Conquer extends Component {
         </div>
       )
     } else {
-      return (<br/>);
+      return (<div></div>);
     }
   }
 
