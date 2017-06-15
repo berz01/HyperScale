@@ -37,13 +37,6 @@ let data = {
 }
 
 export default class Feed extends Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      counter: 1
-    };
-  }
 
   generateIcon(type){
     var icon = "fa fa-question";
@@ -66,127 +59,20 @@ export default class Feed extends Component {
     return icon;
   }
 
-  generateCallTemplate(type, data){
-    return (
-      <div className="form-body">
-        <div className="form-group">
-            <label>Phone Number</label>
-            <div className="input-group">
-                <span className="input-group-addon">
-                    <i className="fa fa-envelope"></i>
-                </span>
-                <input type="text" className="form-control" placeholder="Phone Number"/>
-            </div> 
-        </div>
-      </div>
-    );
-  };
-  generateTextTemplate(type, data){
-    return (
-      <div className="form-body">
-        <div className="form-group">
-            <label>SMS</label>
-            <div className="input-group">
-                <span className="input-group-addon">
-                    <i className="fa fa-mobile"></i>
-                </span>
-                <input type="text" className="form-control" placeholder="Phone Number"/> </div>
-        </div>
-        <div className="form-group">
-            <div className="row">
-              <label className="col-md-3 control-label">SMS Templates</label>
-              <div className="col-md-9">
-                  <select className="form-control">
-                      <option>Hello Again!</option>
-                      <option>Just Checking In</option>
-                      <option>Lets Catch Up :)</option>
-                  </select>
-              </div>
-            </div>
-        </div>
-        <div className="form-group">
-            <label>Message</label>
-            <textarea className="form-control" rows="3"></textarea>
-        </div>
-      </div>
-    );
-  };
-  generateEmailTemplate(type, data){
-      return (
-        <div className="form-body">
-          <div className="form-group">
-              <label>Email Address</label>
-              <div className="input-group">
-                  <span className="input-group-addon">
-                      <i className="fa fa-envelope"></i>
-                  </span>
-                  <input type="text" className="form-control" placeholder="Email Address"/>
-              </div>
-
-          </div>
-          <div className="form-group">
-              <div className="row">
-                <label className="col-md-3 control-label">Email Templates</label>
-                <div className="col-md-9">
-                    <select className="form-control">
-                        <option>Hello Again!</option>
-                        <option>Just Checking In</option>
-                        <option>Lets Catch Up :)</option>
-                    </select>
-                </div>
-              </div>
-          </div>
-          <div className="form-group">
-              <label>Contents</label>
-              <textarea className="form-control" rows="3"></textarea>
-          </div>
-        </div>
-      );
-  };
-  generateNoteTemplate(type, data){
-    return (
-      <div className="form-body">
-        <div className="form-group">
-            <label>Note</label>
-            <textarea className="form-control" rows="3"></textarea>
-        </div>
-      </div>
-    );
-  };
-
-  addFeedItem(type){
-    switch(type){
-      case "Call":
-        return this.generateCallTemplate();
-        break;
-      case "Text":
-        return this.generateTextTemplate();
-        break;
-      case "Email":
-        return this.generateEmailTemplate();
-        break;
-      case "Note":
-        return this.generateNoteTemplate();
-        break;
-    }
-  };
-
   generateFeedItem(item){
-    var href = "#task-" + this.state.counter + "-2";
-    var id = "task-" + this.state.counter++ + "-2";
     return (
       <li className="mt-list-item">
           <div className="list-todo-icon bg-white font-blue-steel">
               <i className={this.generateIcon(item.type)}></i>
           </div>
           <div className="list-todo-item grey">
-              <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href={href} aria-expanded="false">
+              <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href="#task-1-2" aria-expanded="false">
                   <div className="list-toggle done uppercase">
                       <div className="list-toggle-title bold">{item.type}</div>
                       <div className="badge badge-default pull-right bold"><i className={this.generateIcon(item.type)}></i></div>
                   </div>
               </a>
-              <div className="task-list panel-collapse collapse" id={id} aria-expanded="false">
+              <div className="task-list panel-collapse collapse" id="task-1-2" aria-expanded="false">
                   <ul>
                       <li className="task-list-item done">
                           <div className="task-icon">
@@ -195,7 +81,10 @@ export default class Feed extends Component {
                               </a>
                           </div>
                           <div className="task-content">
-                            {this.addFeedItem(item.type, item)}
+                              <h4 className="uppercase bold">
+                                  <a href="javascript:;">First Info Row</a>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
                           </div>
                       </li>
                   </ul>
@@ -219,6 +108,59 @@ export default class Feed extends Component {
     );
 
   };
+
+  generateFeed(feedItems){
+    const feed = feedItems.map((item) =>
+      <li className="mt-list-item">
+          <div className="list-todo-icon bg-white font-blue-steel">
+              <i className={this.generateIcon(item.type)}></i>
+          </div>
+          <div className="list-todo-item grey">
+              <a className="list-toggle-container font-white collapsed" data-toggle="collapse" href="#task-1-2" aria-expanded="false">
+                  <div className="list-toggle done uppercase">
+                      <div className="list-toggle-title bold">{item.type}</div>
+                      <div className="badge badge-default pull-right bold"><i className={this.generateIcon(item.type)}></i></div>
+                  </div>
+              </a>
+              <div className="task-list panel-collapse collapse" id="task-1-2" aria-expanded="false">
+                  <ul>
+                      <li className="task-list-item done">
+                          <div className="task-icon">
+                              <a href="javascript:;">
+                                  <i className={this.generateIcon(item.type)}></i>
+                              </a>
+                          </div>
+                          <div className="task-content">
+                              <h4 className="uppercase bold">
+                                  <a href="javascript:;">First Info Row</a>
+                              </h4>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum gravida mauris, a tincidunt dolor porttitor eu. </p>
+                          </div>
+                      </li>
+                  </ul>
+                  <div className="task-footer bg-grey">
+                      <div className="row">
+                          <div className="col-xs-6">
+                              <a className="task-trash" href="javascript:;">
+                                  <i className="fa fa-trash"></i>
+                              </a>
+                          </div>
+                          <div className="col-xs-6">
+                              <a className="task-add" href="javascript:;">
+                                  <i className="fa fa-plus"></i>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </li>
+    );
+    ReactDOM.render(
+    {feed},
+    document.getElementById('feedContainer')
+    );
+  }
 
   render() {
     return (

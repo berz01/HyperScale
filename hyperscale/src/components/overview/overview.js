@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './overview.css';
 
-import Conquer from '../conquer/conquer';
+import ConquerBench from '../conquer/conquer-bench';
 import Feed from '../feed/feed';
 
 export default class Overview extends Component {
@@ -122,7 +122,7 @@ export default class Overview extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <Conquer completedActions={this.getPendingActions()} pendingActions={this.getPendingActions()} />
+              <ConquerBench completedActions={this.getCompletedActions()} pendingActions={this.getPendingActions()} />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">

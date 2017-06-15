@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './conquer.css';
 
-export default class Conquer extends Component {
+export default class ConquerBench extends Component {
 
   constructor(props){
     super(props);
@@ -55,8 +55,7 @@ export default class Conquer extends Component {
                   </div>
                   <div className="mt-action-buttons ">
                       <div className="btn-group btn-group-circle">
-                          <button type="button" className="btn btn-outline green btn-sm">Add</button>
-                          <button type="button" className="btn btn-outline red btn-sm">Dismiss</button>
+                          <button type="button" className="btn btn-outline green btn-sm">See Feed</button>
                       </div>
                   </div>
               </div>
