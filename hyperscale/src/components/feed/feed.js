@@ -29,6 +29,7 @@ export default class Feed extends Component {
   }
 
   componentWillReceiveProps(props){
+      console.log("Testing"); 
       this.setState({feedItems: props.feedItems})
   };
   generateIcon(type){
@@ -235,6 +236,8 @@ export default class Feed extends Component {
                               {this.generateFeedItem(this.state.feedItems[1])}
                               {this.generateFeedItem(this.state.feedItems[2])}
                               {this.generateFeedItem(this.state.feedItems[3])}
+                              {this.generateFeedItem(this.state.feedItems[4])}
+                              {this.generateFeedItem(this.state.feedItems[5])}
                               {this.generateFeedItem(this.state.feedItems[4])}
                               {this.generateFeedItem(this.state.feedItems[5])}
                           </ul>

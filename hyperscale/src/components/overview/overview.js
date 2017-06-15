@@ -35,6 +35,15 @@ export default class Overview extends Component {
       },
       {
         type: "Email"
+      },
+      {
+        type: "Email"
+      },
+      {
+        type: "Note"
+      },
+      {
+        type: "Email"
       }];
   };
 
@@ -130,8 +139,8 @@ export default class Overview extends Component {
 
   addNewFeedAction(type){
     var feedItems = this.state.feedItems;
-    feedItems.push({
-      type: "Call"
+    feedItems.unshift({
+      type: type
     })
 
     console.log(this.state.feedItems);
@@ -153,10 +162,10 @@ export default class Overview extends Component {
               </div>
               <div className="col-xs-6">
                 <div className="action-row">
-                  <a onClick={(e) => this.addNewFeedAction(e)} className="btn btn-lg default blue space"> Call <i className="fa fa-user"></i></a>
-                  <a onClick={(e) => this.addNewFeedAction(e)}  className="btn btn-lg default red space"> Text <i className="fa fa-user"></i></a>
-                  <a onClick={(e) => this.addNewFeedAction(e)}  className="btn btn-lg default green space"> Email <i className="fa fa-user"></i></a>
-                  <a onClick={(e) => this.addNewFeedAction(e)}  className="btn btn-lg default purple space"> Note <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction("Call")} className="btn btn-lg default blue space"> Call <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction("Text")}  className="btn btn-lg default red space"> Text <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction("Email")}  className="btn btn-lg default green space"> Email <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction("Note")}  className="btn btn-lg default purple space"> Note <i className="fa fa-user"></i></a>
                 </div>
               </div>
               {/* END PAGE TITLE */}
