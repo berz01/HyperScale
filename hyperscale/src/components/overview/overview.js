@@ -141,10 +141,10 @@ export default class Overview extends Component {
 
   getPendingActions(){
     return [{
-        name: "Goronwy Makar",
-        status: "Active",
+        name: "Tim Hightower",
+        status: "New",
         lastAction: "Call",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Jeanette Marvin",
         status: "Active",
@@ -154,28 +154,28 @@ export default class Overview extends Component {
         name: "Quidel Ted",
         status: "Active",
         lastAction: "Email",
-        type: "Existing"
+        type: "Filed a claim"
       }, {
         name: "Alec Ulick",
-        status: "Active",
+        status: "Inactive",
         lastAction: "Email",
-        type: "Existing"
+        type: "Expired"
       }, {
         name: "Taylor Ereio",
-        status: "Active",
+        status: "New",
         lastAction: "Call",
-        type: "Existing"
+        type: "Internet Lead"
       }, {
         name: "Shannon Veloz",
-        status: "Active",
+        status: "New",
         lastAction: "Note",
-        type: "Existing"
+        type: "Internet Lead"
       },
       {
         name: "Sara Bealer",
-        status: "Active",
+        status: "Inactive",
         lastAction: "Text",
-        type: "Existing"
+        type: "Expired"
       },
       {
         name: "Patrick Stevenson",
@@ -233,14 +233,14 @@ export default class Overview extends Component {
               {/* BEGIN PAGE TITLE */}
               <div className="col-xs-6">
                 <div className="page-title">
-                    <h1>Overview    <small>your daily todo</small> </h1>
+                    <h1>RocketReach    <small>: outbound sales automation dashboard</small> </h1>
                 </div>
               </div>
               <div className="col-xs-6">
                 <div className="action-row">
-                  <a onClick={(e) => this.addNewFeedAction("Call")} className="btn btn-lg default blue space"> Call <i className="fa fa-user"></i></a>
-                  <a onClick={(e) => this.addNewFeedAction("Text")}  className="btn btn-lg default red space"> Text <i className="fa fa-user"></i></a>
-                  <a onClick={(e) => this.addNewFeedAction("Email")}  className="btn btn-lg default green space"> Email <i className="fa fa-user"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction("Call")} className="btn btn-lg default blue space"> Call <i className="fa fa-phone-square"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction("Text")}  className="btn btn-lg default red space"> Text <i className="fa fa-comments"></i></a>
+                  <a onClick={(e) => this.addNewFeedAction("Email")}  className="btn btn-lg default green space"> Email <i className="fa fa-envelope-o"></i></a>
                   <a onClick={(e) => this.addNewFeedAction("Note")}  className="btn btn-lg default purple space"> Note <i className="fa fa-user"></i></a>
                 </div>
               </div>
@@ -251,7 +251,7 @@ export default class Overview extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <ConquerBench title="Staged Interactions" handleSeeFeed={this.changeFeedClient.bind(this)} completedActions={this.state.completedActions} pendingActions={this.state.pendingActions} />
+              <ConquerBench title="Workbench" handleSeeFeed={this.changeFeedClient.bind(this)} completedActions={this.state.completedActions} pendingActions={this.state.pendingActions} />
             </div>
             <div className="col-lg-6 col-xs-12 col-sm-12">
               <div className="row">

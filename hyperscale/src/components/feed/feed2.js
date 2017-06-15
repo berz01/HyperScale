@@ -43,10 +43,10 @@ export default class Feed extends Component {
 
     switch(type){
       case "Call":
-        icon = "fa fa-phone fa-lg"
+        icon = "icon-docs font-red-intense"
         break;
       case "Text":
-        icon = "fa fa-comment fa-lg"
+        icon = "icon-user-following font-green-haze"
         break;
       case "Email":
         icon = "fa fa-envelope fa-lg"
@@ -168,19 +168,19 @@ export default class Feed extends Component {
               <div className="portlet-title">
                   <div className="caption">
                       <i className=" icon-feed font-green"></i>
-                      <span className="caption-subject font-green bold uppercase">Feed</span>
-                      <div className="caption-desc font-grey-cascade"> List of interaction with this client</div>
+                      <span className="caption-subject font-green bold uppercase">ACTIVITY FEED</span>
+                      <div className="caption-desc font-grey-cascade"> Most recent monthly interactions with this client</div>
                   </div>
               </div>
               <div className="portlet-body">
                   <div className="mt-element-list">
                       <div className="mt-list-head list-todo red">
                           <div className="list-head-title-container">
-                                <h3 className="list-title">{data.user.name}                          <i className="fa fa-phone"></i>      {data.stats.calls}   <i className="fa fa-comment"></i>   {data.stats.texts}   <i className="fa fa-envelope"></i>    {data.stats.emails}   <i className="fa fa-sticky-note"></i>       {data.stats.notes}      </h3>
+                                <h3 className="list-title">{data.user.name}<i className="fa fa-phone"></i>      {data.stats.calls}   <i className="fa fa-comment"></i>   {data.stats.texts}   <i className="fa fa-envelope"></i>    {data.stats.emails}   <i className="fa fa-sticky-note"></i>       {data.stats.notes}      </h3>
                           </div>
                           <a href="javascript:;">
                               <div className="list-count pull-right red-mint">
-                                  <i className="fa fa-plus"></i>
+                                  <i className="fa fa-user"></i>
                               </div>
                           </a>
                       </div>

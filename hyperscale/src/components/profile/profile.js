@@ -32,8 +32,8 @@ export default class Profile extends Component {
                                       <div className="col-md-9">
                                           <div className="row">
                                               <div className="col-md-8 profile-info">
-                                                  <h1 className="font-green sbold uppercase">John Doe</h1>
-                                                  <p><b> Most recent notes: </b>He came by the office with his wife and had inquired about increasing his coverages
+                                                  <h1 className="font-green sbold uppercase">Bob Castle</h1>
+                                                  <p><b> Most recent notes: </b>Tim came by the office with his wife and had inquired about increasing his coverages
                                                       </p>
                                                   <p>
 

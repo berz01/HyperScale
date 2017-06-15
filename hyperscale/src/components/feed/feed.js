@@ -9,9 +9,9 @@ let styles = {
 let data = {
     stats: {
       calls: 4,
-      texts: 5,
-      emails: 6,
-      notes: 2
+      texts: 1,
+      emails: 3,
+      notes: 1
     }
 }
 
@@ -29,21 +29,24 @@ export default class Feed extends Component {
     console.log(props.feedItems);
       this.setState({feedItems: props.feedItems})
   };
+
+  // these are the icons on the side of the Activity Feed - currently blue
+
   generateIcon(type){
     var icon = "fa fa-question";
 
     switch(type){
       case "Call":
-        icon = "fa fa-phone fa-lg"
+        icon = "icon-docs font-red-intense"
         break;
       case "Text":
-        icon = "fa fa-comment fa-lg"
+        icon = "icon-user-following font-green-haze"
         break;
       case "Email":
-        icon = "fa fa-envelope fa-lg"
+        icon = "mt-timeline-icon icon-call bg-green-jungle bg-font-green-jungle border-grey-steel"
         break;
       case "Note":
-        icon = "fa fa-sticky-note fa-lg"
+        icon = "fa fa-sticky-note fa-lg font-green-haze"
         break;
     }
 
@@ -57,9 +60,9 @@ export default class Feed extends Component {
             <label>Phone Number</label>
             <div className="input-group">
                 <span className="input-group-addon">
-                    <i className="fa fa-envelope"></i>
+                    <i className="fa fa-phone"></i>
                 </span>
-                <input type="text" className="form-control" placeholder="Phone Number"/>
+                <input type="text" className="form-control" placeholder="Phone Number" value="404-307-7465"/>
             </div>
         </div>
       </div>
@@ -72,9 +75,9 @@ export default class Feed extends Component {
             <label>SMS</label>
             <div className="input-group">
                 <span className="input-group-addon">
-                    <i className="fa fa-mobile"></i>
+                    <i className="fa fa-comment"></i>
                 </span>
-                <input type="text" className="form-control" placeholder="Phone Number"/> </div>
+                <input type="text" className="form-control" placeholder="Phone Number" value="404-307-7465"/> </div>
         </div>
         <div className="form-group">
             <div className="row">
@@ -84,6 +87,7 @@ export default class Feed extends Component {
                       <option>Hello Again!</option>
                       <option>Just Checking In</option>
                       <option>Lets Catch Up :)</option>
+                        <option>SMS: Send Welcome</option>
                   </select>
               </div>
             </div>
@@ -104,7 +108,7 @@ export default class Feed extends Component {
                   <span className="input-group-addon">
                       <i className="fa fa-envelope"></i>
                   </span>
-                  <input type="text" className="form-control" placeholder="Email Address"/>
+                  <input type="text" className="form-control" placeholder="Email Address" value="barrettdavis01@gmail.com"/>
               </div>
 
           </div>
@@ -116,6 +120,7 @@ export default class Feed extends Component {
                         <option>Hello Again!</option>
                         <option>Just Checking In</option>
                         <option>Lets Catch Up :)</option>
+                        <option>SMS: Catch up</option>
                     </select>
                 </div>
               </div>
@@ -205,8 +210,8 @@ export default class Feed extends Component {
               <div className="portlet-title">
                   <div className="caption">
                       <i className=" icon-feed font-green"></i>
-                      <span className="caption-subject font-green bold uppercase">Feed</span>
-                      <div className="caption-desc font-grey-cascade"> List of interaction with this client</div>
+                      <span className="caption-subject font-green bold uppercase">ACTIVITY FEED</span>
+                      <div className="caption-desc font-grey-cascade"> Most recent monthly interactions with this client</div>
                   </div>
               </div>
               <div className="portlet-body">
@@ -217,7 +222,7 @@ export default class Feed extends Component {
                           </div>
                           <a href="javascript:;">
                               <div className="list-count pull-right red-mint">
-                                  <i className="fa fa-plus"></i>
+                                  <i className="fa fa-user"></i>
                               </div>
                           </a>
                       </div>
