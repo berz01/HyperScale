@@ -9,7 +9,12 @@ var pendingActions = [{
       status: "Policy Renewal in 5 days",
       lastAction: "Call",
       type: "Existing"
-    }, {
+    },{
+      name: "Shannon Veloz",
+      status: "Policy Renewal in 5 days",
+      lastAction: "Note",
+      type: "Existing"
+    },{
       name: "Jeanette Marvin",
       status: "Policy Renewal in 5 days",
       lastAction: "Text",
@@ -29,10 +34,10 @@ var pendingActions = [{
       status: "Policy Renewal in 5 days",
       lastAction: "Call",
       type: "Existing"
-    }, {
-      name: "Shannon Veloz",
+    },  {
+      name: "Jeanette Marvin",
       status: "Policy Renewal in 5 days",
-      lastAction: "Note",
+      lastAction: "Text",
       type: "Existing"
     },
     {
@@ -77,16 +82,6 @@ export default class Retention extends Component {
         lastAction: "Call",
         type: "Existing"
       }, {
-        name: "Jeanette Marvin",
-        status: "Policy Renewal in 5 days",
-        lastAction: "Text",
-        type: "Existing"
-      }, {
-        name: "Quidel Ted",
-        status: "Policy Renewal in 5 days",
-        lastAction: "Email",
-        type: "Existing"
-      }, {
         name: "Alec Ulick",
         status: "Policy Renewal in 5 days",
         lastAction: "Email",
@@ -96,7 +91,17 @@ export default class Retention extends Component {
         status: "Policy Renewal in 5 days",
         lastAction: "Call",
         type: "Existing"
-      }
+      },{
+        name: "Taylor Ereio",
+        status: "Policy Renewal in 5 days",
+        lastAction: "Call",
+        type: "Existing"
+      },  {
+        name: "Jeanette Marvin",
+        status: "Policy Renewal in 5 days",
+        lastAction: "Text",
+        type: "Existing"
+      },
     ];
   };
 
@@ -116,7 +121,7 @@ export default class Retention extends Component {
               {/* BEGIN PAGE TITLE */}
               <div className="col-xs-6">
                 <div className="page-title">
-                    <h1>Existing    <small>reach out to our community</small> </h1>
+                    <h1>Expired    <small>get back our greatest customers</small> </h1>
                 </div>
               </div>
               <div className="col-xs-6">
@@ -134,7 +139,7 @@ export default class Retention extends Component {
           <div className="clearfix"></div>
           <div className="row">
             <div className="col-lg-6 col-xs-12 col-sm-12">
-              <Conquer title="Existing Clients"
+              <Conquer title="Policy Expired Clients"
               dismissAction={this.dismissAction.bind(this)}
               addPendingAction={this.props.addPendingAction}
               completedActions={this.state.completedActions}

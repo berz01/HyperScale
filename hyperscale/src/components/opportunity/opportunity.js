@@ -103,7 +103,7 @@ export default class Opportunity extends Component {
   }
 
   dismissAction(i){
-    var actions = this.state.pendingActions; 
+    var actions = this.state.pendingActions;
     actions.splice(i, 1);
     this.setState({
       pendingActions: actions
@@ -118,7 +118,7 @@ export default class Opportunity extends Component {
               {/* BEGIN PAGE TITLE */}
               <div className="col-xs-6">
                 <div className="page-title">
-                    <h1>Opportunity    <small>find people in need</small> </h1>
+                    <h1>Potential    <small>find people in need</small> </h1>
                 </div>
               </div>
               <div className="col-xs-6">

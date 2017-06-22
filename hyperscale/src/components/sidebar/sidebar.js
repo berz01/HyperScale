@@ -50,7 +50,7 @@ export default class Sidebar extends Component {
                     </Link>
                   </li>
                   <li className="nav-item ">
-                      <Link to="/retention" className="nav-link">
+                      <Link to="/expired" className="nav-link">
                             <i className="icon-ghost"></i>
                             <span className="title">Expired</span>
                     </Link>

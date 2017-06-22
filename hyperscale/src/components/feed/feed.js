@@ -220,7 +220,7 @@ export default class Feed extends Component {
               <i className="fa fa-phone-square icon-padding"></i>
             </a>
           </div>
-          <div className="col-xs-5">
+          <div className="col-xs-5" data-toggle="collapse" href={href}>
             <a onClick={(e) => this.callLightingAdd(e)} className="btn btn-md btn-primary-outline space task-add">
               Quick Add
               <i className="fa fa-bolt icon-padding"></i>

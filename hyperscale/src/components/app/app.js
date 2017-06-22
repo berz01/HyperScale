@@ -7,6 +7,7 @@ import Sidebar from '../sidebar/sidebar';
 import Overview from '../overview/overview';
 import Opportunity from '../opportunity/opportunity';
 import Retention from '../retention/retention';
+import Expired from '../expired/retention';
 
 import {
   BrowserRouter as Router,
@@ -111,6 +112,7 @@ export default class App extends Component {
               <Route exact path="/" component={() => (<Overview pendingActions={this.state.pendingActions} />)} />
               <Route path="/retention" component={() => (<Retention addPendingAction={this.addPendingAction.bind(this)} />)} />
               <Route path="/opportunity" component={() => (<Opportunity addPendingAction={this.addPendingAction.bind(this)} />)}/>
+              <Route path="/expired" component={() => (<Expired addPendingAction={this.addPendingAction.bind(this)} />)}/>
             </div>
           </div>
         </div>
