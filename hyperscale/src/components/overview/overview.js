@@ -174,13 +174,13 @@ export default class Overview extends Component {
           {/* BEGIN PAGE HEAD*/}
           <div className="page-head row">
               {/* BEGIN PAGE TITLE */}
-              <div className="col-xs-6">
+              <div className="col-xs-5">
                 <div className="page-title">
 
                     <h1><img src="../assets/img/rocket-img.jpg" className="rocket-reach" alt="RocketReach" height="75" width="75"/> RocketReach    <small>: outbound sales automation</small> </h1>
                 </div>
               </div>
-              <div className="col-xs-6">
+              <div className="col-xs-7">
                 <div className="action-row">
                   <a onClick={(e) => this.addNewFeedAction("Call")} className="btn btn-lg default blue space"> Call <i className="fa fa-phone-square"></i></a>
                   <a onClick={(e) => this.addNewFeedAction("Text")}  className="btn btn-lg default red space"> Text <i className="fa fa-comments"></i></a>

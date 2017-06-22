@@ -6,11 +6,23 @@
     margin-right: 20px;
     /*width: 50%;*/
 }
-/*
+
+.call-action {
+  margin-top: 10px;
+}
+
+.task-footer-bullshit {
+  padding: 0 15px 0 15px;
+}
+
+.icon-padding-section {
+  padding-top:7px;
+  padding-right:20px;
+}
+
 .icon-padding {
-  text-align: right;
-  width: 50%;
-}*/
+  padding:0 5px 0 5px;
+}
 
 .simple-size-default {
   font-size: 20px
